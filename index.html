@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Christopher Brown — Engineering Leader · Customer Strategist</title>
+<meta name="description" content="Christopher Brown: 2 U.S. patents, Harvard Business School, 15+ years leading customer-facing engineering teams at enterprise scale.">
+<meta name="robots" content="index,follow"><link rel="canonical" href="https://christopherbrown.io/">
+<meta property="og:title" content="Christopher Brown — Engineering Leader · Customer Strategist">
+<meta property="og:description" content="2 U.S. patents. Harvard Business School. I build teams and systems that make customers successful.">
+<meta property="og:image" content="https://christopherbrown.io/hero.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Christopher Brown","url":"https://christopherbrown.io/","jobTitle":"Customer-Facing Engineering Leader","worksFor":{"@type":"Organization","name":"Amazon Web Services"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Virginia Tech"},{"@type":"CollegeOrUniversity","name":"Harvard Business School"}],"knowsAbout":["Enterprise engineering leadership","Customer strategy","AI and cloud infrastructure","People development"],"sameAs":["https://www.linkedin.com/in/christopherrbrown3/"]}</script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans',system-ui,sans-serif;background:#fcfbf9;color:#2d2d2d;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:#2d2d2d;text-decoration:underline;text-decoration-color:#c9c4bc;text-underline-offset:3px}
+a:hover{text-decoration-color:#2d2d2d}
+
+/* Nav — just a name, no links. Let the scroll do the work */
+nav{padding:.8rem 0;position:sticky;top:0;z-index:50;background:rgba(252,251,249,.95);backdrop-filter:blur(10px);transform:translateY(-100%);opacity:0;transition:transform .3s ease,opacity .3s ease}
+nav.visible{transform:translateY(0);opacity:1}
+nav .w{display:flex;justify-content:space-between;align-items:baseline}
+.w{max-width:1080px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem)}
+.nav-name{font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem}
+
+/* Hero — asymmetric, editorial feel */
+.hero{padding:4rem 0 3rem}
+.hero .w{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
+.hero-photo img{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center 15%;display:block}
+.nav-photo{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center 15%;opacity:0;transform:scale(.5);transition:all .3s ease;margin-left:.75rem;vertical-align:middle}
+.nav-photo.visible{opacity:1;transform:scale(1)}
+.hero-text .eyebrow{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:#999;border:1px solid #e0dcd6;padding:.3rem .8rem;border-radius:3px;margin-bottom:1.5rem}
+.hero-text h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:400;line-height:1.1;margin-bottom:1.2rem;color:#1a1a1a}
+.hero-text p{color:#777;font-size:1rem;max-width:44ch;margin-bottom:1.5rem}
+.hero-text p strong{color:#2d2d2d}
+.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
+.hero-tags span{font-size:.7rem;font-weight:500;color:#888;padding:.25rem 0;border-bottom:1.5px solid #e0dcd6}
+.hero-actions{display:flex;gap:.8rem;align-items:center}
+.btn-primary{background:#1a1a1a;color:#fcfbf9;padding:.65rem 1.5rem;border-radius:8px;font-weight:700;font-size:.82rem;text-decoration:none;transition:background .2s}
+.btn-primary:hover{background:#444}
+.btn-ghost{color:#888;font-size:.82rem;font-weight:500;text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:2px}
+.btn-ghost:hover{color:#2d2d2d;border-color:#2d2d2d}
+
+/* Divider */
+.divider{border:none;border-top:1px solid #e8e5df;margin:0}
+
+/* Looking for — offset layout */
+.looking{padding:3rem 0}
+.looking .w{display:grid;grid-template-columns:200px 1fr;gap:3rem}
+.looking .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#999;padding-top:.3rem}
+.looking .content p{color:#666;font-size:.92rem;margin-bottom:.6rem}
+.looking .content strong{color:#2d2d2d}
+
+/* Proof — horizontal scroll on mobile, staggered grid on desktop */
+.proof{padding:3rem 0}
+.proof h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.6rem;font-weight:400;margin-bottom:.3rem}
+.proof .sub{color:#999;font-size:.8rem;margin-bottom:1.5rem}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e8e5df;border:1px solid #e8e5df;border-radius:12px;overflow:hidden}
+.proof-card{background:#fcfbf9;padding:1.3rem}
+.proof-card h3{font-size:.82rem;font-weight:700;margin-bottom:.2rem}
+.proof-card .accent{font-size:.68rem;color:#b08d57;font-weight:500;margin-bottom:.3rem}
+.proof-card p{color:#888;font-size:.78rem}
+.proof-card a{color:#b08d57;font-size:.7rem;text-decoration:none;border-bottom:1px solid #e0dcd6}
+
+/* Customers — minimal, just names in a line */
+.customers{padding:2.5rem 0}
+.customers .w{text-align:center}
+.customers .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#999;margin-bottom:1rem}
+.customer-list{display:flex;flex-wrap:wrap;gap:0;justify-content:center}
+.customer-list span{font-size:.88rem;font-weight:500;color:#555;padding:.4rem 1rem;position:relative}
+.customer-list span:not(:last-child)::after{content:'·';position:absolute;right:-.15rem;color:#ccc}
+
+/* Career — clean timeline with left border */
+.career{padding:3rem 0}
+.career .w{display:grid;grid-template-columns:200px 1fr;gap:3rem}
+.career .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#999;padding-top:.3rem}
+.career-items{border-left:2px solid #e8e5df;padding-left:1.5rem}
+.career-item{margin-bottom:1.5rem;position:relative}
+.career-item::before{content:'';position:absolute;left:-1.75rem;top:.45rem;width:8px;height:8px;border-radius:50%;background:#b08d57;border:2px solid #fcfbf9;box-shadow:0 0 0 2px #e8e5df}
+.career-item .yr{font-size:.7rem;color:#b08d57;font-weight:500}
+.career-item h3{font-size:.88rem;font-weight:700}
+.career-item .co{font-size:.75rem;color:#999}
+.career-item p{color:#777;font-size:.82rem;margin-top:.15rem}
+
+/* Credentials — two columns, no boxes */
+.creds{padding:3rem 0}
+.creds .w{display:grid;grid-template-columns:200px 1fr;gap:3rem}
+.creds .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#999;padding-top:.3rem}
+.creds-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.creds-col h3{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#999;margin-bottom:.6rem}
+.creds-col p{color:#666;font-size:.8rem;margin-bottom:.3rem}
+.creds-col .hl{color:#b08d57;font-weight:600}
+
+/* CTA — simple, centered */
+.cta{padding:4rem 0;text-align:center}
+.cta h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;font-weight:400;margin-bottom:.5rem}
+.cta p{color:#888;font-size:.88rem;max-width:50ch;margin:.3rem auto 1.5rem}
+
+footer{padding:2rem 0;text-align:center;color:#ccc;font-size:.7rem}
+
+@media(max-width:768px){
+.hero .w{grid-template-columns:1fr;text-align:center}
+.hero-photo{margin:0 auto}
+.hero-text .eyebrow{margin-left:auto;margin-right:auto}
+.hero-text p{margin-left:auto;margin-right:auto}
+.hero-tags{justify-content:center}
+.hero-actions{justify-content:center;flex-wrap:wrap}
+.looking .w,.career .w,.creds .w{grid-template-columns:1fr}
+.looking .label,.career .label,.creds .label{margin-bottom:.5rem}
+.proof-grid{grid-template-columns:1fr}
+.creds-grid{grid-template-columns:1fr}
+.customer-list span{font-size:.8rem;padding:.3rem .6rem}
+.cta h2{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+<nav><div class="w"><span class="nav-name">Christopher Brown<img class="nav-photo" src="hero.png" alt=""></span></div></nav>
+
+<section class="hero"><div class="w">
+<div class="hero-text">
+<div class="eyebrow">Engineering Leader · Customer Strategist</div>
+<h1>I build teams and systems that make customers successful.</h1>
+<p>I lead post-sales engineering organizations at enterprise scale — <strong>people development, customer strategy, technical execution, and operational excellence</strong>. I'm fluent in AI, cloud infrastructure, and the business problems they solve.</p>
+<div class="hero-tags">
+<span>2 U.S. Patents</span><span>Harvard Business School</span><span>15+ Years Enterprise</span><span>AI-Native Builder</span><span>Public Sector Experience</span><span>U.S. Citizen</span>
+</div>
+<div class="hero-actions">
+<a class="btn-primary" href="mailto:hello@christopherbrown.io">Get in touch</a>
+<a class="btn-ghost" href="https://www.linkedin.com/in/christopherrbrown3/" target="_blank">LinkedIn ↗</a>
+<a class="btn-ghost" href="https://www.christopherbrown.io/resume.pdf" target="_blank">Resume ↗</a>
+</div>
+</div>
+<div class="hero-photo"><img src="hero.png" alt="Christopher Brown"></div>
+</div></section>
+
+<hr class="divider">
+
+<section id="looking" class="looking"><div class="w">
+<div class="label">What I'm looking for</div>
+<div class="content">
+<p><strong>Role:</strong> Leadership in customer engineering, solutions architecture, technical program management, or AI operations.</p>
+<p><strong>Environment:</strong> Global tech companies leading the next generation of technology.</p>
+<p><strong>What I bring:</strong> I've built and led a distributed post-sales engineering org, designed production AI systems, and owned the technical relationship for one of AWS's largest customers.</p>
+<p><strong>Location:</strong> Washington, D.C. metro. Open to hybrid or remote.</p>
+</div>
+</div></section>
+
+<hr class="divider">
+
+<section id="proof" class="proof"><div class="w">
+<h2>Proof of work</h2>
+<p class="sub">Specific outcomes. Verifiable claims.</p>
+<div class="proof-grid">
+<div class="proof-card"><h3>2 issued U.S. patents</h3><div class="accent">Application migration · CI/CD orchestration</div><p>Named inventor on novel systems for automating enterprise software migration and continuous delivery pipelines.</p><p style="margin-top:.3rem"><a href="https://patents.google.com/patent/US11194558" target="_blank">US 11,194,558</a> · <a href="https://patents.google.com/patent/US10409589" target="_blank">US 10,409,589</a></p></div>
+<div class="proof-card"><h3>Production AI systems</h3><div class="accent">Python · Claude · Bedrock · 15+ data sources</div><p>Built AI-powered workflows for automated executive reporting, incident monitoring, escalation triage, and cross-system data synthesis.</p></div>
+<div class="proof-card"><h3>Built an org from scratch</h3><div class="accent">Zero attrition · First Principal in org history</div><p>Built promotion frameworks, coaching protocols, and operating cadences — including developing the first Principal-level specialist ever produced.</p></div>
+<div class="proof-card"><h3>AI quality system</h3><div class="accent">Deterministic + LLM hybrid</div><p>Built an automated review system that standardized document quality across the organization.</p></div>
+<div class="proof-card"><h3>Fortune 50 technical strategy</h3><div class="accent">Multi-region · C-suite relationships</div><p>End-to-end ownership of the customer engineering relationship — technical strategy, escalation governance, executive alignment.</p></div>
+<div class="proof-card"><h3>Crisis leadership</h3><div class="accent">VP-level · Multi-timezone · Global scale</div><p>Led engineering response during infrastructure events affecting global-scale production workloads.</p></div>
+</div>
+</div></section>
+
+<hr class="divider">
+
+<section class="customers"><div class="w">
+<div class="label">Customers I've supported</div>
+<div class="customer-list">
+<span>Salesforce</span><span>Infor</span><span>U.S. Air Force</span><span>U.S. Army</span><span>U.S. Postal Service</span><span>NIH</span><span>Dept. of Defense</span>
+</div>
+</div></section>
+
+<hr class="divider">
+
+<section id="path" class="career"><div class="w">
+<div class="label">Career path</div>
+<div class="career-items">
+<div class="career-item"><div class="yr">2016 – Present</div><h3>Engineering Leader — Enterprise Accounts</h3><div class="co">Amazon Web Services</div><p>Own the end-to-end customer engineering relationship for one of AWS's largest enterprise accounts. Lead a distributed team across multiple regions and business units. Built the team from the ground up with zero attrition. Designed AI-powered operational systems that run autonomously across the org.</p></div>
+<div class="career-item"><div class="yr">2012 – 2016</div><h3>Engineering Manager & Federal Cloud Lead</h3><div class="co">Accenture Federal Services</div><p>Promoted from Analyst to Manager in 2 years — fastest in the practice. Managed secure cloud modernization programs for defense and intelligence stakeholders. Hold 2 U.S. patents for systems I invented here.</p></div>
+<div class="career-item"><div class="yr">2011 – 2012</div><h3>Solution Developer</h3><div class="co">Avanade (Accenture × Microsoft JV)</div><p>Led delivery of the first U.S. Federal application on Microsoft Azure. Full-stack engineer on a national-scale logistics platform serving thousands of daily users. Led UX modernization and international expansion to new markets.</p></div>
+<div class="career-item"><div class="yr">2010 – 2011</div><h3>Software Developer</h3><div class="co">Harmonia Holdings Group</div><p>Built research software for NIH and U.S. Army clients. Owned QA automation and release engineering for multiple concurrent projects.</p></div>
+</div>
+</div></section>
+
+<hr class="divider">
+
+<section class="creds"><div class="w">
+<div class="label">Credentials</div>
+<div class="creds-grid">
+<div class="creds-col">
+<h3>Education</h3>
+<p><span class="hl">Harvard Business School Online</span> — Certificate of Specialization, Leadership & Management (Dec 2025). CLIMB Inaugural Cohort. CORe with High Honors (2021).</p>
+<p><span class="hl">Virginia Tech</span> — B.S. Computer Science (2011).</p>
+</div>
+<div class="creds-col">
+<h3>Certifications</h3>
+<p><span class="hl">U.S. Patent 11,194,558</span> — Application migration automation.</p>
+<p><span class="hl">U.S. Patent 10,409,589</span> — CI/CD pipeline orchestration.</p>
+<p style="margin-top:.4rem"><span class="hl">AWS</span> — ML Engineer Associate · AI Practitioner · Solutions Architect Associate · SysOps Admin Associate · Developer Associate · Incident Response · Agentic AI.</p>
+<p><span class="hl">Microsoft</span> — MCSA: Cloud Platform · Architecting Azure · Implementing Azure Infrastructure · MCPS.</p>
+<p><span class="hl">Queen's University</span> — Enterprise Sales Professional Certificate.</p>
+<p><span class="hl">Global Mentorship Initiative</span> — Platinum Mentor · GMI Certified Mentor.</p>
+<p><span class="hl">Amazon</span> — Blog Bar Raiser · Doc Bar Raiser (internal quality review certification).</p>
+</div>
+</div>
+</div></section>
+
+<hr class="divider">
+
+<section id="connect" class="cta"><div class="w">
+<h2>Let's talk.</h2>
+<p>I'm looking for leadership roles in customer engineering, solutions architecture, or technical program management at global tech companies leading the next generation of technology.</p>
+<div class="hero-actions" style="justify-content:center">
+<a class="btn-primary" href="mailto:hello@christopherbrown.io">Get in touch</a>
+<a class="btn-ghost" href="https://www.linkedin.com/in/christopherrbrown3/" target="_blank">LinkedIn ↗</a>
+<a class="btn-ghost" href="https://www.christopherbrown.io/resume.pdf" target="_blank">Resume ↗</a>
+</div>
+</div></section>
+
+<footer><div class="w">© <script>document.write(new Date().getFullYear())</script> Christopher Brown · Alexandria, VA</div></footer>
+<script>
+const hp=document.querySelector('.hero-photo');
+const nv=document.querySelector('nav');
+const np=document.querySelector('.nav-photo');
+const ob=new IntersectionObserver(([e])=>{const v=!e.isIntersecting;nv.classList.toggle('visible',v);np.classList.toggle('visible',v)},{threshold:0.3});
+ob.observe(hp);
+</script>
+</body></html>
