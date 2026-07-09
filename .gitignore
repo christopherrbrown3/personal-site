@@ -1,11 +1,8 @@
 .DS_Store
 output/
 
-# Local legacy/source assets that are not part of the published site.
-53359566_10157037086747248_1521648269489340416_n.jpg
-Profile.pdf
-profile.jpg
-profile-highres.jpg
-resume_customer_ats.pdf
-resume_strategy_ats.pdf
-resume_targeted_ats.pdf
+# Local unpublished source/variant assets.
+profile*.jpg
+Profile*.pdf
+resume_*_ats.pdf
+*_n.jpg
