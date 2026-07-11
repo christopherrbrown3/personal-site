@@ -1,230 +1,349 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Christopher Brown — Engineering Leader · Customer Strategist</title>
-<meta name="description" content="Christopher Brown: 2 U.S. patents, Harvard Business School, 15+ years leading customer-facing engineering teams at enterprise scale.">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://christopherbrown.io/">
-<meta property="og:title" content="Christopher Brown — Engineering Leader · Customer Strategist">
-<meta property="og:description" content="2 U.S. patents. Harvard Business School. I build teams and systems that make customers successful.">
-<meta property="og:image" content="https://christopherbrown.io/hero.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Christopher Brown","url":"https://christopherbrown.io/","jobTitle":"Customer-Facing Engineering Leader","worksFor":{"@type":"Organization","name":"Amazon Web Services"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Virginia Tech"},{"@type":"CollegeOrUniversity","name":"Harvard Business School"}],"knowsAbout":["Enterprise engineering leadership","Customer strategy","AI and cloud infrastructure","People development"],"sameAs":["https://www.linkedin.com/in/christopherrbrown3/","https://github.com/christopherrbrown3"]}</script>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'DM Sans',system-ui,sans-serif;background:#fcfbf9;color:#2d2d2d;line-height:1.7;-webkit-font-smoothing:antialiased}
-a{color:#2d2d2d;text-decoration:underline;text-decoration-color:#c9c4bc;text-underline-offset:3px}
-a:hover{text-decoration-color:#2d2d2d}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-/* Nav — just a name, no links. Let the scroll do the work */
-nav{padding:.8rem 0;position:sticky;top:0;z-index:50;background:rgba(252,251,249,.95);backdrop-filter:blur(10px);transform:translateY(-100%);opacity:0;transition:transform .3s ease,opacity .3s ease}
-nav.visible{transform:translateY(0);opacity:1}
-nav .w{display:flex;justify-content:space-between;align-items:baseline}
-.w{max-width:1080px;margin:0 auto;padding:0 clamp(1.5rem,5vw,3rem)}
-.nav-name{font-family:'DM Serif Display',Georgia,serif;font-size:1.1rem}
+  <title>Christopher Brown | Enterprise Customer Engineering Leader</title>
+  <meta name="description" content="Christopher Brown is an enterprise customer engineering and post-sales operations leader at AWS who scales strategic-account teams, AI-enabled workflows, and talent systems.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#17382f">
+  <link rel="canonical" href="https://christopherbrown.io/">
 
-/* Hero — asymmetric, editorial feel */
-.hero{padding:4rem 0 3rem}
-.hero .w{display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center}
-.hero-photo img{width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center 15%;display:block}
-.nav-photo{width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:center 15%;opacity:0;transform:scale(.5);transition:all .3s ease;margin-left:.75rem;vertical-align:middle}
-.nav-photo.visible{opacity:1;transform:scale(1)}
-.hero-text .eyebrow{display:inline-block;font-size:.65rem;text-transform:uppercase;letter-spacing:.2em;color:#666;border:1px solid #e0dcd6;padding:.3rem .8rem;border-radius:3px;margin-bottom:1.5rem}
-.hero-text h1{font-family:'DM Serif Display',Georgia,serif;font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:400;line-height:1.1;margin-bottom:1.2rem;color:#1a1a1a}
-.hero-text p{color:#6f6f6f;font-size:1rem;max-width:44ch;margin-bottom:1.5rem}
-.hero-text p strong{color:#2d2d2d}
-.hero-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
-.hero-tags span{font-size:.7rem;font-weight:500;color:#666;padding:.25rem 0;border-bottom:1.5px solid #e0dcd6}
-.hero-actions{display:flex;gap:.8rem;align-items:center}
-.btn-primary{background:#1a1a1a;color:#fcfbf9;padding:.65rem 1.5rem;border-radius:8px;font-weight:700;font-size:.82rem;text-decoration:none;transition:background .2s}
-.btn-primary:hover{background:#444}
-.btn-ghost{color:#666;font-size:.82rem;font-weight:500;text-decoration:none;border-bottom:1px solid #ddd;padding-bottom:2px}
-.btn-ghost:hover{color:#2d2d2d;border-color:#2d2d2d}
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://christopherbrown.io/">
+  <meta property="og:title" content="Christopher Brown | Enterprise Customer Engineering Leader">
+  <meta property="og:description" content="I scale the teams and operating systems behind enterprise trust.">
+  <meta property="og:image" content="https://christopherbrown.io/assets/christopher-brown-social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Christopher Brown — enterprise customer engineering and post-sales operations leader">
+  <meta property="profile:first_name" content="Christopher">
+  <meta property="profile:last_name" content="Brown">
 
-/* Divider */
-.divider{border:none;border-top:1px solid #e8e5df;margin:0}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Christopher Brown | Enterprise Customer Engineering Leader">
+  <meta name="twitter:description" content="Customer trust, applied AI operations, and talent systems at enterprise scale.">
+  <meta name="twitter:image" content="https://christopherbrown.io/assets/christopher-brown-social.jpg">
 
-/* Looking for — offset layout */
-.looking{padding:3rem 0}
-.looking .w{display:grid;grid-template-columns:200px 1fr;gap:3rem}
-.looking .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#666;padding-top:.3rem}
-.looking .content p{color:#666;font-size:.92rem;margin-bottom:.6rem}
-.looking .content strong{color:#2d2d2d}
+  <link rel="icon" href="assets/monogram.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="stylesheet" href="styles.css">
 
-/* Proof — horizontal scroll on mobile, staggered grid on desktop */
-.proof{padding:3rem 0}
-.proof h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.6rem;font-weight:400;margin-bottom:.3rem}
-.proof .sub{color:#666;font-size:.8rem;margin-bottom:1.5rem}
-.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e8e5df;border:1px solid #e8e5df;border-radius:12px;overflow:hidden}
-.proof-card{background:#fcfbf9;padding:1.3rem}
-.proof-card h3{font-size:.82rem;font-weight:700;margin-bottom:.2rem}
-.proof-card .accent{font-size:.68rem;color:#8a642b;font-weight:500;margin-bottom:.3rem}
-.proof-card p{color:#666;font-size:.78rem}
-.proof-card a{color:#8a642b;font-size:.7rem;text-decoration:none;border-bottom:1px solid #e0dcd6}
-
-/* Customers — minimal, just names in a line */
-.customers{padding:2.5rem 0}
-.customers .w{text-align:center}
-.customers .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#666;margin-bottom:1rem}
-.customer-list{display:flex;flex-wrap:wrap;gap:0;justify-content:center}
-.customer-list span{font-size:.88rem;font-weight:500;color:#555;padding:.4rem 1rem;position:relative}
-.customer-list span:not(:last-child)::after{content:'·';position:absolute;right:-.15rem;color:#ccc}
-
-/* Career — clean timeline with left border */
-.career{padding:3rem 0}
-.career .w{display:grid;grid-template-columns:200px 1fr;gap:3rem}
-.career .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#666;padding-top:.3rem}
-.career-items{border-left:2px solid #e8e5df;padding-left:1.5rem}
-.career-item{margin-bottom:1.5rem;position:relative}
-.career-item::before{content:'';position:absolute;left:-1.75rem;top:.45rem;width:8px;height:8px;border-radius:50%;background:#8a642b;border:2px solid #fcfbf9;box-shadow:0 0 0 2px #e8e5df}
-.career-item .yr{font-size:.7rem;color:#8a642b;font-weight:500}
-.career-item h3{font-size:.88rem;font-weight:700}
-.career-item .co{font-size:.75rem;color:#666}
-.career-item p{color:#6f6f6f;font-size:.82rem;margin-top:.15rem}
-
-/* Credentials — two columns, no boxes */
-.creds{padding:3rem 0}
-.creds .w{display:grid;grid-template-columns:200px 1fr;gap:3rem}
-.creds .label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:#666;padding-top:.3rem}
-.creds-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
-.creds-col h3{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#666;margin-bottom:.6rem}
-.creds-col p{color:#666;font-size:.8rem;margin-bottom:.3rem}
-.creds-col .hl{color:#8a642b;font-weight:600}
-
-/* CTA — simple, centered */
-.cta{padding:4rem 0;text-align:center}
-.cta h2{font-family:'DM Serif Display',Georgia,serif;font-size:1.8rem;font-weight:400;margin-bottom:.5rem}
-.cta p{color:#666;font-size:.88rem;max-width:50ch;margin:.3rem auto 1.5rem}
-
-footer{padding:2rem 0;text-align:center;color:#ccc;font-size:.7rem}
-
-@media(max-width:768px){
-.hero .w{grid-template-columns:1fr;text-align:center}
-.hero-photo{margin:0 auto}
-.hero-text .eyebrow{margin-left:auto;margin-right:auto}
-.hero-text p{margin-left:auto;margin-right:auto}
-.hero-tags{justify-content:center}
-.hero-actions{justify-content:center;flex-wrap:wrap}
-.looking .w,.career .w,.creds .w{grid-template-columns:1fr}
-.looking .label,.career .label,.creds .label{margin-bottom:.5rem}
-.proof-grid{grid-template-columns:1fr}
-.creds-grid{grid-template-columns:1fr}
-.customer-list span{font-size:.8rem;padding:.3rem .6rem}
-.cta h2{font-size:1.4rem}
-}
-</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christopher Brown",
+    "alternateName": "Chris Brown",
+    "url": "https://christopherbrown.io/",
+    "image": "https://christopherbrown.io/assets/christopher-brown-800.jpg",
+    "jobTitle": "Enterprise Customer Engineering and Post-Sales Operations Leader",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Amazon Web Services"
+    },
+    "homeLocation": {
+      "@type": "Place",
+      "name": "Alexandria, Virginia"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Virginia Tech"
+    },
+    "hasCredential": [
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Credential of Leadership, Impact, and Management in Business",
+        "recognizedBy": {
+          "@type": "EducationalOrganization",
+          "name": "Harvard Business School Online"
+        }
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "name": "Credential of Readiness (CORe), High Honors",
+        "recognizedBy": {
+          "@type": "EducationalOrganization",
+          "name": "Harvard Business School Online"
+        }
+      }
+    ],
+    "knowsAbout": [
+      "Enterprise customer engineering",
+      "Post-sales operations",
+      "Strategic accounts",
+      "AI-enabled operations",
+      "Cloud transformation",
+      "Executive advisory",
+      "Organizational design",
+      "Talent development"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/christopherrbrown3/",
+      "https://github.com/christopherrbrown3"
+    ]
+  }
+  </script>
 </head>
+
 <body>
-<nav><div class="w"><span class="nav-name">Christopher Brown<img class="nav-photo" src="hero.png" alt=""></span></div></nav>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page-progress" aria-hidden="true"><span></span></div>
 
-<section class="hero"><div class="w">
-<div class="hero-text">
-<div class="eyebrow">Engineering Leader · Customer Strategist</div>
-<h1>I build teams and systems that make customers successful.</h1>
-<p>I lead post-sales engineering organizations at enterprise scale — <strong>people development, customer strategy, technical execution, and operational excellence</strong>. I'm fluent in AI, cloud infrastructure, and the business problems they solve.</p>
-<div class="hero-tags">
-<span>2 U.S. Patents</span><span>Harvard Business School</span><span>15+ Years Enterprise</span><span>AI-Native Builder</span><span>Public Sector Experience</span><span>U.S. Citizen</span>
-</div>
-<div class="hero-actions">
-<a class="btn-primary" href="mailto:hello@christopherbrown.io">Get in touch</a>
-<a class="btn-ghost" href="https://www.linkedin.com/in/christopherrbrown3/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-<a class="btn-ghost" href="https://github.com/christopherrbrown3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-<a class="btn-ghost" href="https://www.christopherbrown.io/resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
-</div>
-</div>
-<div class="hero-photo"><img src="hero.png" alt="Christopher Brown"></div>
-</div></section>
+  <header class="site-header" data-header>
+    <nav class="site-nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">CB</span>
+        <span class="brand-name">Christopher Brown</span>
+      </a>
 
-<hr class="divider">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-links">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="menu-line menu-line-one" aria-hidden="true"></span>
+        <span class="menu-line menu-line-two" aria-hidden="true"></span>
+      </button>
 
-<section id="looking" class="looking"><div class="w">
-<div class="label">What I'm looking for</div>
-<div class="content">
-<p><strong>Role:</strong> Leadership in customer engineering, solutions architecture, technical program management, or AI operations.</p>
-<p><strong>Environment:</strong> Global tech companies leading the next generation of technology.</p>
-<p><strong>What I bring:</strong> I've built and led a distributed post-sales engineering org, designed production AI systems, and owned the technical relationship for one of AWS's largest customers.</p>
-<p><strong>Location:</strong> Washington, D.C. metro. Open to hybrid or remote.</p>
-</div>
-</div></section>
+      <div class="nav-links" id="primary-links" data-nav-links>
+        <a href="#impact">Impact</a>
+        <a href="#approach">How I lead</a>
+        <a href="#career">Career</a>
+        <a href="#credentials">Credentials</a>
+        <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener noreferrer">Résumé <span aria-hidden="true">↗</span></a>
+        <a class="nav-contact" href="mailto:hello@christopherbrown.io">Let’s talk</a>
+      </div>
+    </nav>
+  </header>
 
-<hr class="divider">
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-heading">
+      <div class="hero-grid shell">
+        <div class="hero-copy">
+          <p class="eyebrow">Enterprise customer engineering · Post-sales operations · AI-enabled transformation</p>
+          <h1 id="hero-heading">I scale the teams and operating systems behind <em>enterprise trust.</em></h1>
+          <p class="hero-intro">I’m Christopher Brown, an enterprise customer engineering and post-sales operations leader at AWS. I build the talent systems, applied-AI workflows, and executive mechanisms that turn complex cloud environments into decisive action.</p>
+          <p class="hero-scope"><span>Current role</span><strong>Enterprise Support Manager — Strategic Accounts, AWS · 2021–Present</strong> Lead post-sales teams and support operations in a complex global strategic-account environment; helped scale the TAM organization from 7 to 30+.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:hello@christopherbrown.io">Discuss a leadership opportunity <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">View résumé</a>
+            <a class="text-link" href="https://www.linkedin.com/in/christopherrbrown3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
 
-<section id="proof" class="proof"><div class="w">
-<h2>Proof of work</h2>
-<p class="sub">Specific outcomes. Verifiable claims.</p>
-<div class="proof-grid">
-<div class="proof-card"><h3>2 issued U.S. patents</h3><div class="accent">Application migration · CI/CD orchestration</div><p>Named inventor on novel systems for automating enterprise software migration and continuous delivery pipelines.</p><p style="margin-top:.3rem"><a href="https://patents.google.com/patent/US11194558" target="_blank" rel="noopener noreferrer">US 11,194,558</a> · <a href="https://patents.google.com/patent/US10409589" target="_blank" rel="noopener noreferrer">US 10,409,589</a></p></div>
-<div class="proof-card"><h3>Production AI systems</h3><div class="accent">Python · Claude · Bedrock · 15+ data sources</div><p>Built AI-powered workflows for automated executive reporting, incident monitoring, escalation triage, and cross-system data synthesis.</p></div>
-<div class="proof-card"><h3>Built an org from scratch</h3><div class="accent">Zero attrition · First Principal in org history</div><p>Built promotion frameworks, coaching protocols, and operating cadences — including developing the first Principal-level specialist ever produced.</p></div>
-<div class="proof-card"><h3>AI quality system</h3><div class="accent">Deterministic + LLM hybrid</div><p>Built an automated review system that standardized document quality across the organization.</p></div>
-<div class="proof-card"><h3>Fortune 50 technical strategy</h3><div class="accent">Multi-region · C-suite relationships</div><p>End-to-end ownership of the customer engineering relationship — technical strategy, escalation governance, executive alignment.</p></div>
-<div class="proof-card"><h3>Crisis leadership</h3><div class="accent">VP-level · Multi-timezone · Global scale</div><p>Led engineering response during infrastructure events affecting global-scale production workloads.</p></div>
-</div>
-</div></section>
+        <div class="hero-portrait">
+          <div class="portrait-outline" aria-hidden="true"></div>
+          <picture>
+            <img src="assets/christopher-brown-800.jpg" srcset="assets/christopher-brown-480.jpg 480w, assets/christopher-brown-800.jpg 800w" sizes="(max-width: 640px) 82vw, 410px" width="800" height="800" alt="Christopher Brown" fetchpriority="high">
+          </picture>
+          <div class="portrait-note">
+            <span>Enterprise operator</span>
+            <strong>Customer trust<br>Systems thinking<br>Talent at scale</strong>
+          </div>
+          <p class="portrait-caption"><span>01</span> Alexandria, Virginia · Working across global teams</p>
+        </div>
+      </div>
+    </section>
 
-<hr class="divider">
+    <section class="proof-strip shell" aria-label="Career proof points" data-reveal>
+      <div class="proof-intro">
+        <p class="section-code">Evidence / 01</p>
+        <h2>Scope, not superlatives.</h2>
+      </div>
+      <div class="proof-item"><strong>15+</strong><span>years across enterprise technology and cloud operations</span></div>
+      <div class="proof-item"><strong>7→30+</strong><span>strategic-account TAM organization scaled</span></div>
+      <div class="proof-item"><strong>Thousands</strong><span>of employees using LLM-powered operational tools</span></div>
+      <div class="proof-item"><strong>2</strong><span>issued U.S. patents in enterprise delivery systems</span></div>
+    </section>
 
-<section class="customers"><div class="w">
-<div class="label">Customers I've supported</div>
-<div class="customer-list">
-<span>Salesforce</span><span>Infor</span><span>U.S. Air Force</span><span>U.S. Army</span><span>U.S. Postal Service</span><span>NIH</span><span>Dept. of Defense</span>
-</div>
-</div></section>
+    <section class="impact section shell" id="impact" aria-labelledby="impact-heading">
+      <div class="section-heading" data-reveal>
+        <div>
+          <p class="section-code">Selected impact / 02</p>
+          <h2 id="impact-heading">Judgment made visible through operating outcomes.</h2>
+        </div>
+        <p>I work where customer stakes, technical complexity, and organizational scale meet. These are the three systems I return to: trust, applied AI, and talent.</p>
+      </div>
 
-<hr class="divider">
+      <article class="case-study" data-reveal>
+        <div class="case-index"><span>01</span><p>Enterprise trust</p></div>
+        <div class="case-narrative">
+          <p class="case-kicker">Cross-company support transformation</p>
+          <h3>Turn incident response into a stronger global support model.</h3>
+          <p class="case-summary">A global technology company needed faster, higher-quality post-incident learning across a complex customer-and-vendor relationship.</p>
+          <div class="case-detail-grid">
+            <div><span>Leadership decision</span><p>Led a cross-company transformation engagement that aligned customer-success leaders with AWS incident-management practices, tooling, and governance.</p></div>
+            <div><span>Durable outcome</span><p>Improved post-incident review speed and quality and embedded mechanisms that strengthened the customer’s global support model.</p></div>
+          </div>
+        </div>
+        <aside class="case-evidence" aria-label="Enterprise trust evidence">
+          <p class="evidence-label">Operating signals</p>
+          <div><span>Relationship</span><strong>Customer + vendor</strong></div>
+          <div><span>Decision layer</span><strong>Customer success + AWS leaders</strong></div>
+          <div><span>Mechanism</span><strong>Incident practices + governance</strong></div>
+        </aside>
+      </article>
 
-<section id="path" class="career"><div class="w">
-<div class="label">Career path</div>
-<div class="career-items">
-<div class="career-item"><div class="yr">2016 – Present</div><h3>Engineering Leader — Enterprise Accounts</h3><div class="co">Amazon Web Services</div><p>Own the end-to-end customer engineering relationship for one of AWS's largest enterprise accounts. Lead a distributed team across multiple regions and business units. Built the team from the ground up with zero attrition. Designed AI-powered operational systems that run autonomously across the org.</p></div>
-<div class="career-item"><div class="yr">2012 – 2016</div><h3>Engineering Manager & Federal Cloud Lead</h3><div class="co">Accenture Federal Services</div><p>Promoted from Analyst to Manager in 2 years — fastest in the practice. Managed secure cloud modernization programs for defense and intelligence stakeholders. Hold 2 U.S. patents for systems I invented here.</p></div>
-<div class="career-item"><div class="yr">2011 – 2012</div><h3>Solution Developer</h3><div class="co">Avanade (Accenture × Microsoft JV)</div><p>Led delivery of the first U.S. Federal application on Microsoft Azure. Full-stack engineer on a national-scale logistics platform serving thousands of daily users. Led UX modernization and international expansion to new markets.</p></div>
-<div class="career-item"><div class="yr">2010 – 2011</div><h3>Software Developer</h3><div class="co">Harmonia Holdings Group</div><p>Built research software for NIH and U.S. Army clients. Owned QA automation and release engineering for multiple concurrent projects.</p></div>
-</div>
-</div></section>
+      <article class="case-study" data-reveal>
+        <div class="case-index"><span>02</span><p>Applied AI operations</p></div>
+        <div class="case-narrative">
+          <p class="case-kicker">Operational innovation</p>
+          <h3>Put AI into the operating flow—not alongside it.</h3>
+          <p class="case-summary">Support organizations generate more case context, risk signals, and executive reporting than people can synthesize consistently. The useful question is not “Where can we add AI?” It is “Where is judgment being lost to operational drag?”</p>
+          <div class="case-detail-grid">
+            <div><span>Leadership decision</span><p>Designed and guided LLM-powered workflows for case summarization, issue triage, reporting, and cross-system synthesis—keeping people in control where severity and customer impact demand judgment.</p></div>
+            <div><span>Durable outcome</span><p>LLM-powered tools used by thousands of employees automated recurring case synthesis, triage, and reporting work; hundreds were trained on prompt design, workflow integration, and responsible operational use.</p></div>
+          </div>
+        </div>
+        <aside class="case-evidence evidence-dark" aria-label="Applied AI operations evidence">
+          <p class="evidence-label">Adoption system</p>
+          <div><span>Tool reach</span><strong>Thousands of employees</strong></div>
+          <div><span>Enablement</span><strong>Hundreds trained</strong></div>
+          <div><span>Use cases</span><strong>Triage · summaries · reporting</strong></div>
+        </aside>
+      </article>
 
-<hr class="divider">
+      <article class="case-study" data-reveal>
+        <div class="case-index"><span>03</span><p>Talent systems</p></div>
+        <div class="case-narrative">
+          <p class="case-kicker">Organizational scale</p>
+          <h3>Scale leadership systems as deliberately as the organization.</h3>
+          <p class="case-summary">Fast growth creates hidden costs when career expectations, decision rights, and leadership pathways stay informal. I treat those mechanisms as part of the operating architecture.</p>
+          <div class="case-detail-grid">
+            <div><span>Leadership decision</span><p>Scaled a strategic-account TAM organization from 7 to 30+, built promotion-readiness coaching, and created a structured path for high-performing individual contributors moving into management.</p></div>
+            <div><span>Durable outcome</span><p>Coached and supported the promotion of the organization’s first Principal-level specialist, strengthened succession planning, and made growth expectations more transparent for both technical and people-leadership tracks.</p></div>
+          </div>
+        </div>
+        <aside class="case-evidence" aria-label="Talent system evidence">
+          <p class="evidence-label">Growth system</p>
+          <div><span>Organization</span><strong>7 → 30+</strong></div>
+          <div><span>Technical path</span><strong>First Principal IC</strong></div>
+          <div><span>Leadership path</span><strong>IC → manager framework</strong></div>
+        </aside>
+      </article>
+    </section>
 
-<section class="creds"><div class="w">
-<div class="label">Credentials</div>
-<div class="creds-grid">
-<div class="creds-col">
-<h3>Education</h3>
-<p><span class="hl">Harvard Business School Online</span> — Certificate of Specialization, Leadership & Management (Dec 2025). CLIMB Inaugural Cohort. CORe with High Honors (2021).</p>
-<p><span class="hl">Virginia Tech</span> — B.S. Computer Science (2011).</p>
-</div>
-<div class="creds-col">
-<h3>Certifications</h3>
-<p><span class="hl">U.S. Patent 11,194,558</span> — Application migration automation.</p>
-<p><span class="hl">U.S. Patent 10,409,589</span> — CI/CD pipeline orchestration.</p>
-<p style="margin-top:.4rem"><span class="hl">AWS</span> — ML Engineer Associate · AI Practitioner · Solutions Architect Associate · SysOps Admin Associate · Developer Associate · Incident Response · Agentic AI.</p>
-<p><span class="hl">Microsoft</span> — MCSA: Cloud Platform · Architecting Azure · Implementing Azure Infrastructure · MCPS.</p>
-<p><span class="hl">Queen's University</span> — Enterprise Sales Professional Certificate.</p>
-<p><span class="hl">Global Mentorship Initiative</span> — Platinum Mentor · GMI Certified Mentor.</p>
-<p><span class="hl">Amazon</span> — Blog Bar Raiser · Doc Bar Raiser (internal quality review certification).</p>
-</div>
-</div>
-</div></section>
+    <section class="operating-model" id="approach" aria-labelledby="approach-heading">
+      <div class="shell operating-grid">
+        <div class="operating-intro" data-reveal>
+          <p class="section-code light">How I lead / 03</p>
+          <h2 id="approach-heading">The operating model behind the work.</h2>
+          <p>Good leadership is a repeatable system: see the whole environment, make the decision legible, build mechanisms that reduce heroics, and transfer ownership to the people closest to the work.</p>
+          <blockquote>“AI should remove operational drag—not human judgment.”</blockquote>
+        </div>
 
-<hr class="divider">
+        <ol class="model-steps" data-reveal>
+          <li><span>01</span><div><h3>Read the system</h3><p>Start with customer stakes, business context, technical signals, and organizational constraints—not a preferred tool.</p></div></li>
+          <li><span>02</span><div><h3>Frame the decision</h3><p>Translate technical complexity into choices, owners, tradeoffs, and a shared executive narrative.</p></div></li>
+          <li><span>03</span><div><h3>Build the mechanism</h3><p>Turn the decision into operating cadence, tooling, quality controls, and feedback loops that can scale.</p></div></li>
+          <li><span>04</span><div><h3>Grow the owners</h3><p>Coach people into greater scope, make expectations explicit, and build succession before it becomes urgent.</p></div></li>
+        </ol>
+      </div>
+    </section>
 
-<section id="connect" class="cta"><div class="w">
-<h2>Let's talk.</h2>
-<p>I'm looking for leadership roles in customer engineering, solutions architecture, or technical program management at global tech companies leading the next generation of technology.</p>
-<div class="hero-actions" style="justify-content:center">
-<a class="btn-primary" href="mailto:hello@christopherbrown.io">Get in touch</a>
-<a class="btn-ghost" href="https://www.linkedin.com/in/christopherrbrown3/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-<a class="btn-ghost" href="https://github.com/christopherrbrown3" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-<a class="btn-ghost" href="https://www.christopherbrown.io/resume.pdf" target="_blank" rel="noopener noreferrer">Resume ↗</a>
-</div>
-</div></section>
+    <section class="career section shell" id="career" aria-labelledby="career-heading">
+      <div class="section-heading career-heading" data-reveal>
+        <div>
+          <p class="section-code">Career progression / 04</p>
+          <h2 id="career-heading">From software engineering to strategic-account leadership.</h2>
+        </div>
+        <p>The through-line is consistent: learn the system deeply, translate it clearly, and improve how teams deliver for customers.</p>
+      </div>
 
-<footer><div class="w">© <script>document.write(new Date().getFullYear())</script> Christopher Brown · Alexandria, VA</div></footer>
-<script>
-const hp=document.querySelector('.hero-photo');
-const nv=document.querySelector('nav');
-const np=document.querySelector('.nav-photo');
-const ob=new IntersectionObserver(([e])=>{const v=!e.isIntersecting;nv.classList.toggle('visible',v);np.classList.toggle('visible',v)},{threshold:0.3});
-ob.observe(hp);
-</script>
-</body></html>
+      <div class="career-list">
+        <article class="career-company" data-reveal>
+          <div class="company-meta"><span>2016–Present</span><h3 id="aws-career-heading">Amazon Web Services</h3><p>Strategic accounts · Washington, D.C. metro</p></div>
+          <ol class="role-progression">
+            <li><span>Nov 2021–Present</span><strong>Enterprise Support Manager — Strategic Accounts</strong><p>Lead post-sales teams, applied-AI operations, talent systems, and executive mechanisms for a complex global account.</p></li>
+            <li><span>Dec 2020–Nov 2021</span><strong>Enterprise Support Lead</strong><p>Set the operating vision for a cross-functional TAM organization and strategic customer transformation.</p></li>
+            <li><span>Dec 2018–Dec 2020</span><strong>Senior Technical Account Manager</strong><p>Advised enterprise software leaders through SaaS modernization, resilience, and operating-model change.</p></li>
+            <li><span>Sep 2016–Nov 2018</span><strong>Technical Account Manager</strong><p>Led operational guidance for some of AWS’s most complex strategic customer environments.</p></li>
+          </ol>
+        </article>
+
+        <article class="career-company compact" data-reveal>
+          <div class="company-meta"><span>2012–2016</span><h3>Accenture Federal Services</h3><p>Cloud architecture · Software engineering</p></div>
+          <div class="career-summary"><strong>Analyst → Consultant → Software Engineering Manager</strong><p>Led secure cloud, identity, DevOps, and application-delivery programs for defense and civilian agencies; served as the federal lead for Microsoft Azure capabilities.</p></div>
+        </article>
+
+        <article class="career-company compact" data-reveal>
+          <div class="company-meta"><span>2011–2012</span><h3>Avanade</h3><p>Solution Developer</p></div>
+          <div class="career-summary"><strong>Enterprise SaaS delivery</strong><p>Led architecture and development for USPS Merchant Returns, modernizing the interface, routing logic, and international expansion with Canada Post.</p></div>
+        </article>
+
+        <article class="career-company compact" data-reveal>
+          <div class="company-meta"><span>2010–2011</span><h3>Harmonia Holdings Group</h3><p>Junior Developer · QA lead</p></div>
+          <div class="career-summary"><strong>Research software and release quality</strong><p>Built data and visualization tools for NIH and U.S. Army research programs, then took ownership of QA automation and release assurance.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="communication section" aria-labelledby="communication-heading">
+      <div class="shell communication-grid">
+        <div data-reveal>
+          <p class="section-code">Communication / 05</p>
+          <h2 id="communication-heading">Make complexity clear enough to act on.</h2>
+          <p>Executive communication is part of the operating system. I build narratives, documents, and review mechanisms that help leaders see risk early and teams move with shared context.</p>
+        </div>
+        <div class="communication-list" data-reveal>
+          <article><span>Bar raising</span><h3>Certified Amazon Doc and Blog Bar Raiser</h3><p>Review and coach high-impact internal documents and public technical content to a consistent quality standard.</p></article>
+          <article><span>Executive enablement</span><h3>Amazon executive-onboarding coach</h3><p>Through the Escape Velocity program, advise new leaders on decision writing, executive communication, and strategic clarity.</p></article>
+          <article><span>Scaled teaching</span><h3>Workshops for hundreds of employees</h3><p>Teach applied AI, prompt design, personal branding, and writing that earns attention and trust.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="credentials section shell" id="credentials" aria-labelledby="credentials-heading">
+      <div class="section-heading" data-reveal>
+        <div>
+          <p class="section-code">Credentials / 06</p>
+          <h2 id="credentials-heading">Technical roots. Business range. Continued practice.</h2>
+        </div>
+        <p>Selected credentials that reinforce the work—not a wall of badges.</p>
+      </div>
+
+      <div class="credential-grid">
+        <article class="credential-panel patents" data-reveal>
+          <p class="credential-label">Issued patents</p>
+          <a href="https://patents.google.com/patent/US11194558" target="_blank" rel="noopener noreferrer"><span>US 11,194,558 · 2021</span><h3>Application Migration System</h3><p>Automation architecture for coordinated enterprise application and data migration.</p><b aria-hidden="true">↗</b></a>
+          <a href="https://patents.google.com/patent/US10409589" target="_blank" rel="noopener noreferrer"><span>US 10,409,589 · 2019</span><h3>Application-Centric Continuous Integration and Delivery</h3><p>End-to-end lifecycle automation with service assurance and governance.</p><b aria-hidden="true">↗</b></a>
+        </article>
+
+        <article class="credential-panel" data-reveal>
+          <p class="credential-label">Education</p>
+          <div><h3>Harvard Business School Online</h3><p>Credential of Leadership, Impact, and Management in Business (CLIMB), Experienced Leaders cohort · 2025</p><p>Credential of Readiness (CORe), High Honors · 2021</p></div>
+          <div><h3>Virginia Tech</h3><p>B.S. Computer Science · 2011</p></div>
+        </article>
+
+        <article class="credential-panel" data-reveal>
+          <p class="credential-label">Selected practice</p>
+          <div><h3>AWS</h3><p>Machine Learning Engineer — Associate · AI Practitioner · Solutions Architect — Associate · SysOps Administrator — Associate · Developer — Associate</p></div>
+          <div><h3>Leadership and service</h3><p>Amazon Doc Bar Raiser · Amazon Blog Bar Raiser · Global Mentorship Initiative Platinum Mentor and Certified Mentor</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-section shell" id="contact" aria-labelledby="contact-heading" data-reveal>
+      <div class="contact-copy">
+        <p class="section-code light">Next conversation / 07</p>
+        <h2 id="contact-heading">Solving a high-stakes customer or operating challenge?</h2>
+        <p>I’m interested in leadership conversations where enterprise customer trust, technical complexity, applied AI, and organizational scale come together.</p>
+      </div>
+      <div class="contact-actions">
+        <a class="button button-light" href="mailto:hello@christopherbrown.io">Discuss the opportunity <span aria-hidden="true">↗</span></a>
+        <a href="mailto:hello@christopherbrown.io">hello@christopherbrown.io</a>
+        <div><a href="https://www.linkedin.com/in/christopherrbrown3/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="https://github.com/christopherrbrown3" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      <p>© <span data-year>2026</span> Christopher Brown</p>
+      <p>Alexandria, Virginia · Enterprise customer engineering and post-sales leadership</p>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
