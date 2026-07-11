@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christopher Brown — Executive Editorial Concept</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #f2eee6;
+      --paper-deep: #e8e0d4;
+      --ink: #14231d;
+      --muted: #616962;
+      --rust: #a8472e;
+      --line: rgba(20, 35, 29, .2);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 5% 0%, rgba(168, 71, 46, .08), transparent 23rem),
+        var(--paper);
+      font-family: "Manrope", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    .shell { width: min(1240px, calc(100% - 64px)); margin: 0 auto; }
+
+    header {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; font-weight: 700; }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: "Newsreader", serif;
+      font-size: 18px;
+    }
+    .nav-links { display: flex; align-items: center; gap: 32px; font-size: 13px; font-weight: 600; }
+    .nav-links a { text-decoration: none; }
+    .nav-cta { border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+
+    main { overflow: hidden; }
+    .hero {
+      min-height: 710px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(330px, .55fr);
+      gap: clamp(48px, 7vw, 112px);
+      align-items: center;
+      padding: 76px 0 64px;
+    }
+
+    .kicker {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 30px;
+      color: var(--rust);
+      font-family: "DM Mono", monospace;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+    }
+    .kicker::before { content: ""; width: 42px; height: 1px; background: currentColor; }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-family: "Newsreader", Georgia, serif;
+      font-size: clamp(62px, 6.6vw, 104px);
+      font-weight: 400;
+      letter-spacing: -.055em;
+      line-height: .9;
+    }
+    h1 em { color: var(--rust); font-weight: 400; }
+    .dek {
+      max-width: 700px;
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: clamp(17px, 1.45vw, 20px);
+      line-height: 1.7;
+    }
+    .dek strong { color: var(--ink); font-weight: 600; }
+
+    .actions { display: flex; align-items: center; gap: 26px; margin-top: 38px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 20px;
+      padding: 16px 20px;
+      color: var(--paper);
+      background: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .button span { color: #e2b7aa; font-size: 18px; }
+    .text-link { font-size: 13px; font-weight: 700; text-underline-offset: 6px; }
+
+    .portrait-column { align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+    .portrait-frame { position: relative; margin: 0; }
+    .portrait-frame::before {
+      content: "";
+      position: absolute;
+      inset: -14px 14px 14px -14px;
+      border: 1px solid var(--rust);
+      z-index: -1;
+    }
+    .portrait-frame img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      display: block;
+      object-fit: cover;
+      object-position: 51% 36%;
+      filter: saturate(.82) contrast(.98);
+    }
+    figcaption {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      line-height: 1.6;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .figure-no { color: var(--rust); }
+
+    .proof-strip {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+    .proof-intro, .proof-item { min-height: 142px; padding: 26px 26px 24px 0; }
+    .proof-item { border-left: 1px solid var(--line); padding-left: 26px; }
+    .proof-label {
+      color: var(--rust);
+      font-family: "DM Mono", monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .proof-intro h2 { margin: 14px 0 0; font: 400 31px/1.05 "Newsreader", serif; }
+    .proof-value { display: block; margin-top: 16px; font: 400 38px/1 "Newsreader", serif; }
+    .proof-copy { display: block; max-width: 18ch; margin-top: 10px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+
+    .preview-note { padding: 24px 0 42px; color: var(--muted); font: 10px "DM Mono", monospace; letter-spacing: .09em; text-transform: uppercase; }
+
+    @media (max-width: 900px) {
+      .shell { width: min(100% - 36px, 720px); }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { grid-template-columns: 1fr; padding-top: 54px; }
+      .portrait-column { width: min(420px, 90%); margin-left: auto; }
+      .proof-strip { grid-template-columns: 1fr 1fr; }
+      .proof-intro { grid-column: 1 / -1; }
+      .proof-item { border-top: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <a class="brand" href="#top"><span class="brand-mark">CB</span><span>Christopher Brown</span></a>
+      <div class="nav-links">
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#writing">Writing</a>
+        <a class="nav-cta" href="mailto:hello@christopherbrown.io">Start a conversation</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-heading">
+      <div>
+        <p class="kicker">Enterprise customer engineering · AI-enabled operations</p>
+        <h1 id="hero-heading">I make complex systems <em>work for people.</em></h1>
+        <p class="dek">I’m Christopher Brown, an enterprise technology leader who turns cloud and AI complexity into <strong>clear strategy, durable operations, and teams that grow.</strong> At AWS, I lead post-sales operations aligned to a $5B+ global strategic account.</p>
+        <div class="actions">
+          <a class="button" href="#impact">See selected impact <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="../resume.pdf">Download résumé</a>
+        </div>
+      </div>
+
+      <div class="portrait-column">
+        <figure class="portrait-frame">
+          <img src="../hero.png" alt="Christopher Brown">
+          <figcaption><span class="figure-no">Portrait 01</span><span>Executive advisor<br>Team builder<br>Technical operator</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="proof-strip shell" id="impact" aria-label="Selected impact">
+      <div class="proof-intro">
+        <span class="proof-label">Selected evidence</span>
+        <h2>Scale without losing the human signal.</h2>
+      </div>
+      <div class="proof-item"><span class="proof-label">Account scope</span><span class="proof-value">$5B+</span><span class="proof-copy">global strategic account alignment</span></div>
+      <div class="proof-item"><span class="proof-label">Organization</span><span class="proof-value">7→30+</span><span class="proof-copy">post-sales team scaled</span></div>
+      <div class="proof-item"><span class="proof-label">AI adoption</span><span class="proof-value">1,000s</span><span class="proof-copy">employees using LLM-powered tools</span></div>
+      <div class="proof-item"><span class="proof-label">Invention</span><span class="proof-value">2</span><span class="proof-copy">issued U.S. patents</span></div>
+    </section>
+    <p class="preview-note shell">Concept 01 · Executive Editorial · A point of view, presented with restraint</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christopher Brown — Systems Ledger Concept</title>
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0a2033;
+      --navy-soft: #102b43;
+      --chalk: #f1f0e9;
+      --steel: #9aaab6;
+      --orange: #ef663f;
+      --grid: rgba(190, 211, 224, .13);
+      --line: rgba(190, 211, 224, .28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--chalk);
+      background:
+        linear-gradient(var(--grid) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+        var(--navy);
+      background-size: 48px 48px;
+      font-family: "IBM Plex Sans", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .shell { width: min(1300px, calc(100% - 56px)); margin: 0 auto; }
+
+    header { border-bottom: 1px solid var(--line); }
+    nav { min-height: 80px; display: grid; grid-template-columns: 1.15fr .85fr 1fr auto; align-items: stretch; }
+    .nav-cell { display: flex; align-items: center; padding: 0 22px; border-left: 1px solid var(--line); }
+    .nav-cell:first-child { border-left: 0; padding-left: 0; }
+    .brand { gap: 14px; text-decoration: none; font-weight: 700; letter-spacing: -.02em; }
+    .brand-code, .status, .nav-link {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .brand-code { color: var(--orange); }
+    .status { gap: 9px; color: var(--steel); }
+    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #92c9a5; box-shadow: 0 0 0 4px rgba(146, 201, 165, .12); }
+    .nav-link { justify-content: center; text-decoration: none; color: var(--steel); }
+    .contact { background: var(--orange); color: #101b24; text-decoration: none; font-weight: 700; }
+
+    .hero { min-height: 665px; display: grid; grid-template-columns: 170px minmax(0, 1fr) 330px; border-bottom: 1px solid var(--line); }
+    .rail { padding: 58px 24px 28px 0; border-right: 1px solid var(--line); }
+    .rail-index { margin: 0 0 40px; color: var(--orange); font: 500 11px "IBM Plex Mono", monospace; }
+    .rail-copy { color: var(--steel); font: 10px/1.8 "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .08em; writing-mode: vertical-rl; transform: rotate(180deg); }
+
+    .hero-main { padding: clamp(58px, 7vw, 92px) clamp(32px, 5vw, 74px) 46px; display: flex; flex-direction: column; }
+    .eyebrow { margin: 0 0 24px; color: var(--orange); font: 500 11px "IBM Plex Mono", monospace; letter-spacing: .13em; text-transform: uppercase; }
+    h1 { max-width: 830px; margin: 0; font-size: clamp(56px, 6.3vw, 94px); line-height: .95; letter-spacing: -.06em; font-weight: 600; }
+    h1 span { display: block; color: var(--steel); font-weight: 400; }
+    .intro { max-width: 710px; margin: 34px 0 0; color: #c6d0d6; font-size: 18px; line-height: 1.65; }
+    .intro strong { color: var(--chalk); font-weight: 500; }
+    .action-row { display: flex; gap: 12px; margin-top: auto; padding-top: 40px; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      min-width: 225px;
+      padding: 15px 16px;
+      background: var(--chalk);
+      color: var(--navy);
+      text-decoration: none;
+      font: 600 12px "IBM Plex Mono", monospace;
+      text-transform: uppercase;
+    }
+    .button.alt { color: var(--chalk); background: transparent; border: 1px solid var(--line); }
+    .button b { color: var(--orange); }
+
+    .scorecard { border-left: 1px solid var(--line); background: rgba(7, 27, 43, .54); }
+    .portrait { position: relative; height: 255px; overflow: hidden; border-bottom: 1px solid var(--line); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center 31%; filter: grayscale(1) contrast(1.06); opacity: .9; }
+    .portrait::after { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, transparent 55%, rgba(239, 102, 63, .48)); mix-blend-mode: color; }
+    .portrait-tag { position: absolute; left: 16px; bottom: 14px; z-index: 1; padding: 7px 9px; color: var(--navy); background: var(--chalk); font: 500 9px "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .metric { min-height: 102px; display: grid; grid-template-columns: 1fr 64px; align-items: end; gap: 12px; padding: 18px; border-bottom: 1px solid var(--line); }
+    .metric-label { color: var(--steel); font: 10px/1.5 "IBM Plex Mono", monospace; text-transform: uppercase; letter-spacing: .08em; }
+    .metric-value { text-align: right; color: var(--chalk); font-size: 29px; font-weight: 500; letter-spacing: -.04em; }
+    .metric-value.orange { color: var(--orange); }
+
+    .lanes { display: grid; grid-template-columns: 170px repeat(3, 1fr); border-bottom: 1px solid var(--line); }
+    .lanes-label { padding: 24px 24px 24px 0; color: var(--orange); font: 500 10px "IBM Plex Mono", monospace; text-transform: uppercase; }
+    .lane { min-height: 120px; padding: 22px; border-left: 1px solid var(--line); }
+    .lane-no { color: var(--orange); font: 10px "IBM Plex Mono", monospace; }
+    .lane h2 { margin: 18px 0 7px; font-size: 17px; font-weight: 600; }
+    .lane p { margin: 0; color: var(--steel); font-size: 12px; line-height: 1.5; }
+    .preview-note { padding: 22px 0 38px; color: var(--steel); font: 10px "IBM Plex Mono", monospace; letter-spacing: .1em; text-transform: uppercase; }
+
+    @media (max-width: 920px) {
+      .shell { width: min(100% - 32px, 720px); }
+      nav { grid-template-columns: 1fr auto; }
+      nav .status, nav .nav-link { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .rail { display: none; }
+      .scorecard { display: grid; grid-template-columns: 1.2fr 1fr; border-left: 0; border-top: 1px solid var(--line); }
+      .portrait { grid-row: span 3; height: auto; border-right: 1px solid var(--line); }
+      .lanes { grid-template-columns: 1fr; }
+      .lanes-label { padding-left: 0; }
+      .lane { border-top: 1px solid var(--line); }
+    }
+    @media (max-width: 540px) {
+      .hero-main { padding: 48px 22px 34px; }
+      h1 { font-size: 49px; }
+      .action-row { flex-direction: column; align-items: stretch; }
+      .button { min-width: 0; width: 100%; }
+      .scorecard { grid-template-columns: 1fr; }
+      .portrait { grid-row: auto; height: 290px; border-right: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="shell" aria-label="Primary navigation">
+      <a class="nav-cell brand" href="#top"><span class="brand-code">CB/</span><span>Christopher Brown</span></a>
+      <span class="nav-cell status">Alexandria, VA · Available for dialogue</span>
+      <a class="nav-cell nav-link" href="#systems">Selected systems + outcomes</a>
+      <a class="nav-cell contact" href="mailto:hello@christopherbrown.io">Contact ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="systems-heading">
+      <aside class="rail"><p class="rail-index">01 / 04</p><p class="rail-copy">Strategy · Systems · People · Outcomes</p></aside>
+      <div class="hero-main">
+        <p class="eyebrow">Enterprise technology leadership / operating at scale</p>
+        <h1 id="systems-heading">Clarity for complexity.<span>Systems built to scale.</span></h1>
+        <p class="intro">I lead customer engineering where the stakes are high and the systems are interconnected—aligning <strong>executive strategy, cloud operations, applied AI, and organizational design</strong> around outcomes people can trust.</p>
+        <div class="action-row">
+          <a class="button" href="#systems">Inspect the work <b>↓</b></a>
+          <a class="button alt" href="../resume.pdf">Résumé <b>↗</b></a>
+        </div>
+      </div>
+      <aside class="scorecard" aria-label="Impact scorecard">
+        <div class="portrait"><img src="../hero.png" alt="Christopher Brown"><span class="portrait-tag">Enterprise operator</span></div>
+        <div class="metric"><span class="metric-label">Strategic account alignment</span><span class="metric-value orange">$5B+</span></div>
+        <div class="metric"><span class="metric-label">Team scale<br>7 to 30+</span><span class="metric-value">4×</span></div>
+        <div class="metric"><span class="metric-label">Cloud users supported</span><span class="metric-value">60M+</span></div>
+        <div class="metric"><span class="metric-label">Issued U.S. patents</span><span class="metric-value">02</span></div>
+      </aside>
+    </section>
+
+    <section class="lanes shell" id="systems" aria-label="Core leadership systems">
+      <div class="lanes-label">Operating system</div>
+      <article class="lane"><span class="lane-no">01</span><h2>Enterprise trust</h2><p>Executive advisory and resilient post-sales operations for mission-critical environments.</p></article>
+      <article class="lane"><span class="lane-no">02</span><h2>Applied AI</h2><p>LLM workflows used by thousands to improve triage, reporting, and decision quality.</p></article>
+      <article class="lane"><span class="lane-no">03</span><h2>Talent systems</h2><p>Promotion pathways and coaching that turn strong individual contributors into leaders.</p></article>
+    </section>
+    <p class="preview-note shell">Concept 02 · Systems Ledger · Technical precision without technology theater</p>
+  </main>
+</body>
+</html>
