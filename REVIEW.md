@@ -1,67 +1,63 @@
-# Detailed redesign review
+# Plain-language redesign review
 
-This branch contains the complete employer-focused redesign. The live site on `main` is unchanged.
+This branch contains the revised employer-focused site. The live site on `main` is unchanged.
 
-## Desktop hero
+## What changed
 
-![Desktop hero preview](review/desktop-hero.jpg)
+The page now leads with one simple idea:
 
-## Mobile hero
+> I help technical teams do their best work.
 
-![Mobile hero preview](review/mobile-hero.jpg)
+The rest of the site supports that statement with specific evidence. Abstract phrases such as “operating model,” “enterprise trust,” and “AI-enabled transformation” have been removed from the main narrative.
 
-## Positioning
+## Design direction
 
-The site now markets Christopher as an **enterprise customer engineering and post-sales operations leader**, differentiated by:
+The visual system is deliberately quiet:
 
-1. strategic-account trust and support transformation;
-2. applied AI embedded in real operating workflows;
-3. repeatable talent and leadership systems.
+- one warm neutral background;
+- deep green type with a restrained rust accent;
+- a large editorial headline and simple portrait treatment;
+- generous space between ideas;
+- thin rules instead of boxes, badges, or decorative UI;
+- short sections that each answer one question.
 
-Applied AI supports the leadership story rather than replacing it with generic AI branding.
+## Page flow
 
-## Page structure
+1. **Introduction** — who Christopher is, what he does, and his current role
+2. **Four facts** — 15+ years, team growth, AI adoption, and two patents
+3. **Three stories** — incident learning, useful AI tools, and team growth
+4. **How I work** — listen, make decisions clear, and leave the team stronger
+5. **Experience** — the path from software development to AWS leadership
+6. **More about me** — writing, teaching, patents, and education
+7. **Contact** — a direct invitation to talk
 
-1. Exact current role, target lane, and validated scale above the fold
-2. Public-safe proof strip
-3. Three decision-and-outcome case studies
-4. Four-step leadership operating model
-5. Full career progression from engineering to strategic accounts
-6. Executive communication and writing differentiator
-7. Patents, precise education wording, and selected credentials
-8. Recruiter-focused contact call to action
+## Recruiter lens
 
-## Recruiter review
+The strongest evidence from the earlier executive-recruiter review remains visible:
 
-An independent executive-recruiter agent reviewed the positioning before implementation and again after the full build. Final verdict: the page is in the **contact** column for Director/Head-level customer engineering, enterprise support, TAM, strategic accounts, and AI-enabled post-sales roles.
+- exact current title and employer;
+- 15+ years across engineering, cloud, and enterprise support;
+- growth from 7 to 30+ Technical Account Managers;
+- AI tools used by thousands and training delivered to hundreds;
+- two issued U.S. patents;
+- clear career progression and continued education.
 
-Its recommendations were incorporated:
+The difference is tone: those facts now carry the story without layers of business language around them.
 
-- exact current title and `7 to 30+` scale signal above the fold;
-- recent cross-company support transformation as the lead case;
-- careful attribution for AI adoption and the Principal-level promotion;
-- public-safe metrics and anonymized customers;
-- plain-language explanation for internal programs;
-- a new two-page résumé aligned with the site.
+## Local review
 
-## Technical validation
-
-- Lighthouse mobile: 99 Performance / 100 Accessibility / 100 Best Practices / 100 SEO
-- Lighthouse desktop: 100 / 100 / 100 / 100
-- Mobile LCP: 1.8s in the local audit
-- Desktop LCP: 0.4s in the local audit
-- Zero measured layout shift
-- Validated at 390px mobile width with no horizontal overflow
-- Mobile navigation open/close behavior verified
-- HTML validation passes
-- No browser console warnings or errors
-- All local assets return HTTP 200
-- Two-page résumé rendered and visually inspected page by page
-
-## Local interactive review
+From the repository root:
 
 ```bash
-python3 -m http.server 4187 --bind 127.0.0.1
+python3 -m http.server 4187 --bind 0.0.0.0
 ```
 
-Open [http://127.0.0.1:4187/](http://127.0.0.1:4187/).
+Open [http://127.0.0.1:4187/](http://127.0.0.1:4187/) on this computer, or use the computer’s local network address from another device on the same network.
+
+## Review prompts
+
+- Does the first screen sound like Christopher rather than a corporate profile?
+- Can each work story be understood without knowing AWS terminology?
+- Do the facts feel confident without overselling?
+- Is there anything important that now feels too understated?
+- Would a hiring leader know why to start a conversation?
