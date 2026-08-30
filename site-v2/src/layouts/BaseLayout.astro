@@ -1,9 +1,9 @@
 ---
-import '@fontsource/atkinson-hyperlegible/400.css';
-import '@fontsource/atkinson-hyperlegible/700.css';
-import '@fontsource/newsreader/500.css';
-import '@fontsource/newsreader/600.css';
-import '@fontsource/newsreader/500-italic.css';
+import '@fontsource/atkinson-hyperlegible/latin-400.css';
+import '@fontsource/atkinson-hyperlegible/latin-700.css';
+import '@fontsource/newsreader/latin-500.css';
+import '@fontsource/newsreader/latin-600.css';
+import '@fontsource/newsreader/latin-500-italic.css';
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -18,7 +18,7 @@ interface Props {
 const {
   title = 'Christopher Brown — Notes, projects, and rabbit holes',
   description = 'Chris Brown writes about small software, developer tools, coffee, home labs, leadership, and whatever technology rabbit hole looks interesting.',
-  image = '/portrait.png',
+  image = '/social.jpg',
   article = false,
 } = Astro.props;
 
@@ -60,4 +60,3 @@ const socialImage = new URL(image, Astro.site);
     <Footer />
   </body>
 </html>
-

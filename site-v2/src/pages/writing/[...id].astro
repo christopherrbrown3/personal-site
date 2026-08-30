@@ -18,7 +18,7 @@ const { Content } = await render(post);
 const { title, description, date, updated, tags, example, hero, heroAlt, accent } = post.data;
 ---
 
-<BaseLayout title={title} description={description} image={hero?.src} article>
+<BaseLayout title={title} description={description} article>
   <article class="article shell" data-accent={accent}>
     <header class="article__header">
       <a class="back-link" href="/writing/">← Writing</a>

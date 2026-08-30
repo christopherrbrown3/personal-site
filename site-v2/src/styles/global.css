@@ -5,7 +5,10 @@
   --ink-soft: #53616a;
   --line: #cfc5b4;
   --coral: #e9654f;
+  --coral-ink: #b74635;
   --teal: #1f8a84;
+  --teal-ink: #166f69;
+  --teal-light: #4fb8b0;
   --yellow: #efc34a;
   --blue: #4187b8;
   --white: #fffdf7;
@@ -25,6 +28,7 @@ html {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 18px;
+  overflow-x: clip;
   scroll-behavior: smooth;
 }
 
@@ -212,7 +216,7 @@ h3 {
 }
 
 .eyebrow {
-  color: var(--teal);
+  color: var(--teal-ink);
 }
 
 .intro__links,
@@ -299,7 +303,7 @@ h3 {
 }
 
 .lately strong {
-  color: var(--coral);
+  color: var(--coral-ink);
   font-family: var(--mono);
   font-size: 0.7rem;
   letter-spacing: 0.1em;
@@ -514,6 +518,10 @@ h3 {
 .short-about h2 {
   margin-bottom: 0.65rem;
   font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+.short-about .eyebrow {
+  color: var(--teal-light);
 }
 
 .short-about p:not(.eyebrow) {
@@ -742,7 +750,7 @@ h3 {
 }
 
 .example-note strong {
-  color: var(--coral);
+  color: var(--coral-ink);
   font-family: var(--mono);
   font-size: 0.7rem;
   letter-spacing: 0.08em;

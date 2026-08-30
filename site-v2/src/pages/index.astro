@@ -35,7 +35,7 @@ const projects = (await getCollection('projects', ({ data }) => data.featured))
       <figure class="portrait">
         <span class="portrait__blob" aria-hidden="true"></span>
         <span class="portrait__tape" aria-hidden="true"></span>
-        <Image src={portrait} alt="Chris Brown smiling outside in a blue hoodie" width={390} height={390} loading="eager" />
+        <Image src={portrait} alt="Chris Brown smiling outside in a blue hoodie" width={390} height={390} loading="eager" fetchpriority="high" />
         <figcaption>Usually near coffee or a keyboard.</figcaption>
       </figure>
       <Image class="intro__wave" src={wave} alt="" width={112} aria-hidden="true" />
@@ -83,4 +83,3 @@ const projects = (await getCollection('projects', ({ data }) => data.featured))
     </section>
   </div>
 </BaseLayout>
-

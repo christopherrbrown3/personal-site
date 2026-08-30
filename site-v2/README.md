@@ -31,13 +31,13 @@ The repository workflow only checks this branch and pull requests. It does **not
 
 ## Launch later
 
-The Astro configuration already uses `https://christopherbrown.io` as its site URL, and the static output contains `CNAME`, the sitemap, RSS, and root-relative routes for the custom domain.
+The Astro configuration already uses `https://christopherbrown.io` as its site URL, and the static output contains `CNAME`, the sitemap, RSS, and root-relative routes for the custom domain. A ready-to-enable Pages workflow lives at `deployment/github-pages.yml`; it is deliberately outside `.github/workflows`, so GitHub cannot run it before approval.
 
 When the redesign is approved:
 
 1. Archive the current root site on a permanent branch/tag.
 2. Move the contents of `site-v2/` to the repository root (or adjust the Pages workflow working directory).
-3. Add the official GitHub Pages deploy job and change the repository Pages source to GitHub Actions.
+3. Move `deployment/github-pages.yml` to `.github/workflows/deploy-pages.yml` and change the repository Pages source to GitHub Actions.
 4. Verify the Pages custom domain remains `christopherbrown.io` and HTTPS is enforced.
 5. Merge only after a final production build and link check.
 
