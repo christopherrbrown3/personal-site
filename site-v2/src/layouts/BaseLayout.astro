@@ -13,6 +13,8 @@ interface Props {
   description?: string;
   image?: string;
   article?: boolean;
+  publishedDate?: Date;
+  tags?: string[];
 }
 
 const {
@@ -20,6 +22,8 @@ const {
   description = 'Chris Brown writes about small software, developer tools, coffee, home labs, leadership, and whatever technology rabbit hole looks interesting.',
   image = '/social.jpg',
   article = false,
+  publishedDate,
+  tags = [],
 } = Astro.props;
 
 const pageTitle = title.startsWith('Christopher Brown') ? title : `${title} — Christopher Brown`;
@@ -46,6 +50,8 @@ const socialImage = new URL(image, Astro.site);
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
+    {article && publishedDate && <meta property="article:published_time" content={publishedDate.toISOString()} />}
+    {article && tags.map((tag) => <meta property="article:tag" content={tag} />)}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
@@ -54,7 +60,7 @@ const socialImage = new URL(image, Astro.site);
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
     <Header />
-    <main id="main-content">
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <Footer />

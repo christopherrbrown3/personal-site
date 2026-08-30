@@ -19,6 +19,8 @@ The standard preview URL is `http://localhost:4321/`.
 - Set `draft: true` to keep a writing entry out of page generation and RSS.
 - Set `example: true` to show the visible placeholder-writing notice.
 
+To start a real post, copy `templates/writing.md` into `src/content/writing/`, give it a URL-friendly filename, and place an optional hero image in `src/assets/writing/`. Remove the `hero` and `heroAlt` fields together when a post does not need an image. The matching project starter is `templates/project.md`.
+
 ## Checks
 
 ```sh
@@ -42,3 +44,5 @@ When the redesign is approved:
 5. Merge only after a final production build and link check.
 
 No DNS move is needed, and this branch does not change the current production site.
+
+The committed production restore point is `archive/pre-astro-2026-08-30`.

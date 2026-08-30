@@ -69,6 +69,10 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+main:focus {
+  outline: none;
+}
+
 h1,
 h2,
 h3,
