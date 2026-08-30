@@ -1,0 +1,31 @@
+---
+title: My iced coffee has a configuration file
+description: On repeatability, ratios, and solving a tiny morning problem with exactly enough software.
+date: 2026-08-05
+tags: [Coffee, Tools]
+draft: false
+example: true
+hero: ../../assets/projects/iced-coffee.png
+heroAlt: The Iced Coffee Ratio calculator shown beside a glass of iced coffee on a countertop
+accent: coral
+---
+
+I make iced coffee often enough that “some coffee, some water” should be muscle memory. It is not.
+
+Different containers, different batch sizes, and a sleepy brain created just enough variability to be annoying. So I did the obvious thing: I made a calculator.
+
+```js
+const coffee = batchSize / ratio;
+const water = batchSize - coffee;
+```
+
+That is most of the important code. The rest is making the answer easy to read while standing in a kitchen.
+
+## Tiny tools should disappear
+
+The calculator does not need an account. It does not need analytics, a newsletter, or an AI assistant named Brewster. It needs to load quickly, remember a preferred ratio, and give me two numbers.
+
+That is the whole product strategy.
+
+There is something satisfying about software that knows exactly how important it is. This one is worth approximately one less bad cup of coffee per week, which feels like a perfectly respectable return.
+

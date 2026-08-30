@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostRow from '../../components/PostRow.astro';
+
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<BaseLayout title="Writing" description="Notes from Chris Brown on software, cloud, coffee, home labs, leadership, and nearby rabbit holes.">
+  <div class="shell page-shell">
+    <header class="page-intro">
+      <p class="eyebrow">The notebook</p>
+      <h1>Writing</h1>
+      <p>Things I learned, things I’m trying, and things I needed to write down before they escaped. New posts arrive when they’re ready.</p>
+    </header>
+    <div class="post-list post-list--all">
+      {posts.map((post, index) => <PostRow post={post} priority={index === 0} />)}
+    </div>
+  </div>
+</BaseLayout>
+

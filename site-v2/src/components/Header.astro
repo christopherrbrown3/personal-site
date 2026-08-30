@@ -1,0 +1,27 @@
+---
+const pathname = Astro.url.pathname;
+const nav = [
+  { href: '/about/', label: 'About' },
+  { href: '/projects/', label: 'Projects' },
+  { href: '/writing/', label: 'Writing' },
+];
+---
+
+<header class="site-header shell">
+  <a class="wordmark" href="/" aria-label="Christopher Brown, home">
+    <span>Christopher Brown</span>
+    <i aria-hidden="true"></i>
+  </a>
+  <nav aria-label="Primary navigation">
+    <ul>
+      {nav.map((item) => (
+        <li>
+          <a href={item.href} aria-current={pathname.startsWith(item.href) ? 'page' : undefined}>
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+

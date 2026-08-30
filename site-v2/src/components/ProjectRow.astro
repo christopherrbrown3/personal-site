@@ -1,0 +1,29 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, description, status, image, imageAlt, liveUrl, sourceUrl, tags, accent } = project.data;
+---
+
+<article class="project-row" data-accent={accent}>
+  {image && (
+    <div class="project-row__image">
+      <Image src={image} alt={imageAlt ?? ''} widths={[520, 840, 1100]} sizes="(max-width: 760px) 92vw, 430px" />
+    </div>
+  )}
+  <div class="project-row__copy">
+    <p class="post-meta"><span>{status}</span>{tags[0] && <><span aria-hidden="true">·</span><span>{tags[0]}</span></>}</p>
+    <h2>{title}</h2>
+    <p>{description}</p>
+    <div class="link-pair">
+      {liveUrl && <a class="text-link" href={liveUrl}>Visit project <span aria-hidden="true">↗</span></a>}
+      {sourceUrl && <a class="quiet-link" href={sourceUrl}>Source</a>}
+    </div>
+  </div>
+</article>
+

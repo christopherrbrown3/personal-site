@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '../utils/content';
+
+interface Props {
+  post: CollectionEntry<'writing'>;
+  priority?: boolean;
+}
+
+const { post, priority = false } = Astro.props;
+const { title, description, date, tags, hero, heroAlt, accent, example } = post.data;
+---
+
+<article class="post-row" data-accent={accent}>
+  <a class="post-row__image" href={`/writing/${post.id}/`} tabindex="-1" aria-hidden="true">
+    {hero ? (
+      <Image
+        src={hero}
+        alt={heroAlt ?? ''}
+        widths={[440, 680, 920]}
+        sizes="(max-width: 720px) 92vw, 340px"
+        loading={priority ? 'eager' : 'lazy'}
+      />
+    ) : (
+      <span class="post-row__placeholder" aria-hidden="true"><b>0010110</b><i>notes from the rabbit hole</i></span>
+    )}
+  </a>
+  <div class="post-row__copy">
+    <p class="post-meta">
+      <time datetime={date.toISOString()}>{formatDate(date)}</time>
+      {tags[0] && <><span aria-hidden="true">·</span><span>{tags[0]}</span></>}
+      {example && <><span aria-hidden="true">·</span><span>example post</span></>}
+    </p>
+    <h3><a href={`/writing/${post.id}/`}>{title}</a></h3>
+    <p>{description}</p>
+    <a class="text-link" href={`/writing/${post.id}/`} aria-label={`Read ${title}`}>Keep reading <span aria-hidden="true">→</span></a>
+  </div>
+</article>
+

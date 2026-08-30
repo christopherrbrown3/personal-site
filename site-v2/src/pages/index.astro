@@ -1,0 +1,86 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostRow from '../components/PostRow.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import portrait from '../assets/portrait/chris.png';
+import wave from '../assets/characters/chris-wave.png';
+import plane from '../assets/characters/chris-plane.png';
+
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+
+const projects = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => a.data.order - b.data.order)
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <div class="shell home">
+    <section class="intro" aria-labelledby="hello">
+      <div class="intro__copy">
+        <p class="eyebrow">Hello from Virginia <span aria-hidden="true">✦</span></p>
+        <h1 id="hello">Hi, I’m Chris.</h1>
+        <p class="intro__lead">I build things, lead technical teams, drink too much iced coffee, and occasionally turn household problems into software.</p>
+        <p>I’ve spent 15+ years around cloud, developer tools, AI, and large-scale technology organizations. Away from work, I’m a husband and dad following whichever technology rabbit hole looks interesting.</p>
+        <div class="intro__links" aria-label="Intro links">
+          <a href="/about/">About</a>
+          <a href="https://github.com/christopherrbrown3">GitHub</a>
+          <a href="https://www.linkedin.com/in/christopherrbrown3/">LinkedIn</a>
+          <a href="/resume.pdf">Résumé</a>
+        </div>
+      </div>
+      <figure class="portrait">
+        <span class="portrait__blob" aria-hidden="true"></span>
+        <span class="portrait__tape" aria-hidden="true"></span>
+        <Image src={portrait} alt="Chris Brown smiling outside in a blue hoodie" width={390} height={390} loading="eager" />
+        <figcaption>Usually near coffee or a keyboard.</figcaption>
+      </figure>
+      <Image class="intro__wave" src={wave} alt="" width={112} aria-hidden="true" />
+    </section>
+
+    <aside class="lately" aria-label="Lately">
+      <strong>Lately</strong>
+      <span>rebuilding this little corner of the internet</span>
+      <span>making tiny software</span>
+      <span>still calibrating the coffee</span>
+    </aside>
+
+    <section class="home-section" aria-labelledby="latest-writing">
+      <SectionHeading eyebrow="From the notebook" title="Latest writing" link="/writing/" linkLabel="All writing" />
+      <div class="post-list">
+        {posts.map((post, index) => <PostRow post={post} priority={index === 0} />)}
+      </div>
+    </section>
+
+    <section class="home-section workbench" aria-labelledby="workbench-heading">
+      <SectionHeading eyebrow="Small software, mostly" title="On the workbench" link="/projects/" linkLabel="All projects" />
+      <div class="project-scraps">
+        {projects.map((project) => (
+          <article class="project-scrap" data-accent={project.data.accent}>
+            <p class="post-meta">{project.data.status}</p>
+            <h3>{project.data.title}</h3>
+            <p>{project.data.description}</p>
+            {project.data.liveUrl && <a class="text-link" href={project.data.liveUrl}>Have a look <span aria-hidden="true">↗</span></a>}
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="short-about">
+      <div>
+        <p class="eyebrow">The brief professional bit</p>
+        <h2>Software, teams, and developer experience.</h2>
+        <p>I’m a technology leader and software engineer based in Alexandria, Virginia. Along the way I’ve picked up a couple of patents and an unreasonable number of opinions about developer experience.</p>
+        <div class="link-pair">
+          <a class="text-link" href="/about/">More about me <span aria-hidden="true">→</span></a>
+          <a class="quiet-link" href="mailto:hello@christopherbrown.io">Say hello</a>
+        </div>
+      </div>
+      <Image class="short-about__plane" src={plane} alt="A playful illustration of Chris throwing a paper airplane" width={210} />
+    </section>
+  </div>
+</BaseLayout>
+

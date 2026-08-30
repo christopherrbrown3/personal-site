@@ -1,0 +1,21 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectRow from '../../components/ProjectRow.astro';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout title="Projects" description="Small apps, household utilities, and home-lab experiments made by Christopher Brown.">
+  <div class="shell page-shell">
+    <header class="page-intro">
+      <p class="eyebrow">Useful, amusing, or both</p>
+      <h1>Things I’ve made</h1>
+      <p>Some began as household problems. Others began with “how hard could that be?”—a phrase with a remarkable failure rate.</p>
+    </header>
+    <div class="project-list">
+      {projects.map((project) => <ProjectRow project={project} />)}
+    </div>
+  </div>
+</BaseLayout>
+

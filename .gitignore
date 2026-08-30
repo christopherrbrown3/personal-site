@@ -1,5 +1,10 @@
 .DS_Store
 output/
+site-v2/node_modules/
+site-v2/dist/
+site-v2/.astro/
+site-v2/.cache/
+.impeccable/
 
 # Local unpublished source/variant assets.
 profile*.jpg

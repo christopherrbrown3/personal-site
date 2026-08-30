@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import sitting from '../assets/characters/chris-sitting.png';
+---
+
+<BaseLayout title="About" description="About Christopher Brown: technologist, software builder, husband, dad, iced-coffee enthusiast, and curious person in Alexandria, Virginia.">
+  <div class="shell about-page">
+    <header class="page-intro about-intro">
+      <p class="eyebrow">A longer hello</p>
+      <h1>I like making complicated things feel a little simpler.</h1>
+      <p>I’m Chris: a technology leader and software engineer in Alexandria, Virginia. I build software, help technical teams do their best work, and make an unreasonable amount of iced coffee.</p>
+    </header>
+
+    <div class="about-grid">
+      <div class="prose about-prose">
+        <h2>The personal version</h2>
+        <p>I’m a husband and dad. Around the house, I’m usually building a tiny app, rearranging something in the home lab, messing with hardware, or following a technology rabbit hole that definitely looked shorter when I started.</p>
+        <p>This site is where those threads land: notes from projects, useful discoveries, occasional opinions, and the things I want to remember.</p>
+
+        <h2>The work version</h2>
+        <p>I’ve spent more than 15 years building software and working across cloud technology, developer tools, AI, and large-scale technical organizations. My career has moved through Harmonia, Avanade, Accenture Federal Services, and a long stretch at AWS.</p>
+        <p>The common thread is developer experience: making tools, systems, and organizations easier for real people to use. Somewhere along the way, I also became an inventor on two U.S. patents.</p>
+        <p>I studied computer science at Virginia Tech and later completed leadership and business programs through Harvard Business School Online.</p>
+
+        <h2>A few links, if you’re curious</h2>
+        <ul>
+          <li><a href="/resume.pdf">The detailed résumé</a>, for dates and sensible bullet points</li>
+          <li><a href="https://patents.google.com/patent/US11194558">U.S. Patent 11,194,558</a> and <a href="https://patents.google.com/patent/US10409589">U.S. Patent 10,409,589</a></li>
+          <li><a href="https://github.com/christopherrbrown3">GitHub</a>, where the small software lives</li>
+          <li><a href="mailto:hello@christopherbrown.io">hello@christopherbrown.io</a>, the easiest way to reach me</li>
+        </ul>
+      </div>
+      <aside class="about-aside">
+        <Image src={sitting} alt="A playful illustration of Chris sitting with a laptop" width={290} />
+        <p><strong>Current operating conditions</strong><br />Alexandria, Virginia<br />Coffee: iced<br />Tabs open: unknowable</p>
+      </aside>
+    </div>
+  </div>
+</BaseLayout>
+

@@ -1,0 +1,49 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatDate } from '../../utils/content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('writing', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+interface Props {
+  post: CollectionEntry<'writing'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, date, updated, tags, example, hero, heroAlt, accent } = post.data;
+---
+
+<BaseLayout title={title} description={description} image={hero?.src} article>
+  <article class="article shell" data-accent={accent}>
+    <header class="article__header">
+      <a class="back-link" href="/writing/">← Writing</a>
+      <p class="post-meta"><time datetime={date.toISOString()}>{formatDate(date)}</time>{tags.map((tag) => <><span aria-hidden="true">·</span><span>{tag}</span></>)}</p>
+      <h1>{title}</h1>
+      <p class="article__dek">{description}</p>
+      {updated && <p class="muted">Updated {formatDate(updated)}</p>}
+    </header>
+    {example && (
+      <aside class="example-note">
+        <strong>Reference post</strong>
+        <span>This is placeholder writing for testing the new publishing system and visual rhythm.</span>
+      </aside>
+    )}
+    {hero && (
+      <figure class="article__hero">
+        <Image src={hero} alt={heroAlt ?? ''} widths={[760, 1100, 1500]} sizes="(max-width: 900px) 92vw, 920px" loading="eager" />
+      </figure>
+    )}
+    <div class="prose">
+      <Content />
+    </div>
+    <footer class="article__footer">
+      <p>That’s all for this rabbit hole.</p>
+      <a class="text-link" href="/writing/">Back to all writing <span aria-hidden="true">→</span></a>
+    </footer>
+  </article>
+</BaseLayout>
