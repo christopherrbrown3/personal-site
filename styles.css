@@ -358,6 +358,8 @@ body {
 .social-link__brand-mark {
   display: block;
   flex: none;
+  /* These paths reach the viewBox edges; leave room for antialiasing. */
+  overflow: visible;
 }
 
 .social-link__utility-icon {
