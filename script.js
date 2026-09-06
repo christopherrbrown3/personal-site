@@ -20,6 +20,12 @@
     "/images/landing/chris-12.png",
     "/images/landing/chris-13.png",
     "/images/landing/chris-14.png",
+    "/images/landing/chris-15.png",
+    "/images/landing/chris-16.png",
+    "/images/landing/chris-17.png",
+    "/images/landing/chris-18.png",
+    "/images/landing/chris-19.png",
+    "/images/landing/chris-20.png",
   ];
   const catalog = document.querySelector("#landing-illustrations")?.textContent ?? "";
   const discoveredPortraits = catalog
