@@ -409,6 +409,198 @@ body {
   font-size: 0.72rem;
 }
 
+body.has-resume-open {
+  position: fixed;
+  top: var(--resume-scroll-offset, 0px);
+  width: 100%;
+  overflow: hidden;
+}
+
+.resume-dialog {
+  width: min(72rem, calc(100% - 2rem));
+  max-width: none;
+  height: min(54rem, calc(100vh - 2rem));
+  height: min(54rem, calc(100dvh - 2rem));
+  max-height: none;
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 12px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: 0 1.5rem 5rem rgba(34, 49, 59, 0.22);
+  overflow: hidden;
+}
+
+.resume-dialog:not([open]) {
+  display: none;
+}
+
+.resume-dialog[open] {
+  animation: resume-enter 240ms var(--ease-out);
+}
+
+.resume-dialog::backdrop {
+  background: rgba(34, 49, 59, 0.38);
+  animation: resume-backdrop-in 240ms ease-out;
+}
+
+.resume-dialog.is-closing {
+  animation: resume-leave 160ms ease-in forwards;
+}
+
+.resume-dialog.is-closing::backdrop {
+  animation: resume-backdrop-out 160ms ease-in forwards;
+}
+
+.resume-dialog__panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.resume-dialog__toolbar {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid #ccd3cb;
+  background: var(--paper-bright);
+}
+
+.resume-dialog__toolbar h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.resume-dialog__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.resume-dialog__download,
+.resume-dialog__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  color: #17675f;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 160ms ease;
+}
+
+.resume-dialog__download {
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background: #e4eee7;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.resume-dialog__close {
+  width: 44px;
+  padding: 0;
+  background: transparent;
+  color: var(--ink-soft);
+}
+
+.resume-dialog__download svg,
+.resume-dialog__close svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex: none;
+}
+
+.resume-dialog__download:hover,
+.resume-dialog__close:hover {
+  background: #dce6df;
+}
+
+.resume-dialog a:focus-visible,
+.resume-dialog button:focus-visible {
+  outline: 3px solid #17675f;
+  outline-offset: 2px;
+}
+
+.resume-dialog__body {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+}
+
+.resume-dialog__frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--paper);
+}
+
+.resume-dialog__frame:not([hidden]) {
+  display: block;
+}
+
+.resume-dialog__status {
+  position: absolute;
+  inset: 0;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.resume-dialog__status a {
+  color: var(--teal);
+  text-underline-offset: 0.2em;
+}
+
+@keyframes resume-enter {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes resume-leave {
+  to { opacity: 0; transform: translateY(6px); }
+}
+
+@keyframes resume-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes resume-backdrop-out {
+  to { opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .resume-dialog {
+    width: calc(100% - 1rem);
+    height: calc(100vh - 1rem);
+    height: calc(100dvh - 1rem);
+  }
+
+  .resume-dialog__toolbar {
+    gap: 0.5rem;
+    padding: 0.5rem 0.65rem;
+    padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+  }
+
+  .resume-dialog__actions {
+    gap: 0.25rem;
+  }
+
+  .resume-dialog__download {
+    padding-inline: 0.55rem;
+    font-size: 0.8rem;
+  }
+}
+
 @keyframes place-sticker {
   0% {
     opacity: 0;
@@ -501,6 +693,18 @@ html.is-paused .ambient__spark {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .resume-dialog[open],
+  .resume-dialog.is-closing,
+  .resume-dialog::backdrop,
+  .resume-dialog.is-closing::backdrop {
+    animation: none;
+  }
+
+  .resume-dialog__download,
+  .resume-dialog__close {
+    transition: none;
+  }
+
   *,
   *::before,
   *::after {
