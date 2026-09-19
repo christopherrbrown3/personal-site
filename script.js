@@ -47,6 +47,8 @@
   const image = document.querySelector("[data-random-portrait]");
   const year = document.querySelector("[data-year]");
   const emailLink = document.querySelector("[data-email-link]");
+  const resumeLink = document.querySelector("[data-resume-open]");
+  const resumeDialog = document.querySelector("#resume-dialog");
   const accentNames = ["teal", "orange", "mustard"];
 
   const encodeAssetPath = (path) => path.split("/").map((segment, index) => {
@@ -173,8 +175,107 @@
   }
 
   const syncAnimationState = () => {
-    document.documentElement.classList.toggle("is-paused", document.hidden);
+    document.documentElement.classList.toggle("is-paused", document.hidden || Boolean(resumeDialog?.open));
   };
+
+  // Keep a real HTML link as the fallback for unsupported browsers and no-JS visits.
+  if (resumeLink && typeof resumeDialog?.showModal === "function") {
+    const frame = resumeDialog.querySelector("[data-resume-frame]");
+    const status = resumeDialog.querySelector("[data-resume-status]");
+    const message = resumeDialog.querySelector("[data-resume-message]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let closeTimer;
+    let savedScrollY = 0;
+    let pointerStartedOutside = false;
+
+    resumeLink.setAttribute("aria-haspopup", "dialog");
+    resumeLink.setAttribute("aria-controls", "resume-dialog");
+
+    const finishClose = () => {
+      window.clearTimeout(closeTimer);
+      if (resumeDialog.open) resumeDialog.close();
+    };
+
+    const requestClose = () => {
+      if (!resumeDialog.open || resumeDialog.classList.contains("is-closing")) return;
+      if (reducedMotion.matches) {
+        finishClose();
+      } else {
+        resumeDialog.classList.add("is-closing");
+        // The timeout is a fallback if the browser does not deliver animationend.
+        closeTimer = window.setTimeout(finishClose, 200);
+      }
+    };
+
+    resumeDialog.addEventListener("animationend", (event) => {
+      if (event.target === resumeDialog && event.animationName === "resume-leave") finishClose();
+    });
+
+    resumeLink.addEventListener("click", (event) => {
+      if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      event.preventDefault();
+      if (resumeDialog.open) return;
+      savedScrollY = window.scrollY;
+      resumeDialog.showModal();
+      document.body.style.setProperty("--resume-scroll-offset", `${-savedScrollY}px`);
+      document.body.classList.add("has-resume-open");
+      if (!frame.hasAttribute("src")) frame.src = "resume.html?embedded=1&v=20260919-1";
+      syncAnimationState();
+    });
+
+    frame.addEventListener("load", () => {
+      if (!frame.hasAttribute("src")) return;
+      try {
+        // A same-origin 404 can also emit load. Keep the fallback visible in that case.
+        if (frame.contentDocument && !frame.contentDocument.querySelector("#main")) {
+          message.textContent = "The résumé could not be loaded. You can still download the PDF.";
+          return;
+        }
+      } catch {
+        // file:// previews may block document access even when the frame displays normally.
+      }
+      status.hidden = true;
+      frame.hidden = false;
+    });
+
+    frame.addEventListener("error", () => {
+      message.textContent = "The résumé could not be loaded. You can still download the PDF.";
+    });
+
+    resumeDialog.querySelector("[data-resume-close]").addEventListener("click", requestClose);
+    resumeDialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      requestClose();
+    });
+    resumeDialog.addEventListener("close", () => {
+      window.clearTimeout(closeTimer);
+      resumeDialog.classList.remove("is-closing");
+      document.body.classList.remove("has-resume-open");
+      document.body.style.removeProperty("--resume-scroll-offset");
+      window.scrollTo(0, savedScrollY);
+      resumeLink.focus({ preventScroll: true });
+      syncAnimationState();
+    });
+
+    const isOutside = (event) => {
+      const bounds = resumeDialog.getBoundingClientRect();
+      return event.clientX < bounds.left || event.clientX > bounds.right
+        || event.clientY < bounds.top || event.clientY > bounds.bottom;
+    };
+    resumeDialog.addEventListener("pointerdown", (event) => {
+      pointerStartedOutside = event.target === resumeDialog && isOutside(event);
+    });
+    resumeDialog.addEventListener("click", (event) => {
+      if (pointerStartedOutside && event.target === resumeDialog && isOutside(event)) requestClose();
+      pointerStartedOutside = false;
+    });
+
+    // Key events do not bubble from an iframe; accept Escape only from our resume frame.
+    window.addEventListener("message", (event) => {
+      if (event.source === frame.contentWindow && event.origin === window.location.origin
+          && event.data?.type === "resume:close") requestClose();
+    });
+  }
 
   document.addEventListener("visibilitychange", syncAnimationState);
   syncAnimationState();

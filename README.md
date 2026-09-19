@@ -18,3 +18,19 @@ the catalog.
 Each image is contained within the same responsive stage. On load, the page
 automatically contains its intrinsic dimensions, so new artwork does not need a
 special CSS rule or filename.
+
+## Résumé
+
+The Résumé link opens `resume.html` in a native dialog with a persistent PDF
+download button. It also works as a standalone page when opened directly or
+when JavaScript is unavailable. Escape, the close button, and a click outside
+the dialog return to the homepage; reduced-motion preferences are respected.
+
+`resume.html` and `resume.pdf` were imported together from
+`christopherrbrown3/resume-customizer`, folder `customized-resumes/Personal Website`,
+revision `63c1734f2d0b808a16c2208b54f38df7cdfccab2` (September 2026 edition).
+The PDF is the supplied two-page file, unchanged. The HTML retains the supplied
+content and layout, with embedding support, local download links, and the same
+email obfuscation used on the homepage. Update both files together when the
+resume changes, and bump their cache versions in `index.html`, `script.js`, and
+`resume.html`.

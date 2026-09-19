@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#f7f2e9">
   <title>Christopher Brown</title>
   <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="stylesheet" href="styles.css?v=20260903-1">
+  <link rel="stylesheet" href="styles.css?v=20260919-2">
 </head>
 <body>
   <!--
@@ -72,7 +72,7 @@
             <span>Email</span>
           </a>
 
-          <a class="social-link social-link--resume" href="resume.pdf" download>
+          <a class="social-link social-link--resume" href="resume.html" data-resume-open>
             <!-- Heroicons document-text, solid: https://heroicons.com/ -->
             <svg class="social-link__utility-icon" viewBox="0 0 24 24" aria-hidden="true">
               <path fill="currentColor" fill-rule="evenodd" d="M5.25 2.25A2.25 2.25 0 0 0 3 4.5v15a2.25 2.25 0 0 0 2.25 2.25h13.5A2.25 2.25 0 0 0 21 19.5V9.108a2.25 2.25 0 0 0-.659-1.591l-4.858-4.858A2.25 2.25 0 0 0 13.892 2.25H5.25Zm9 1.5v4.5h4.5l-4.5-4.5ZM6.75 12a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75h9a.75.75 0 0 1 0 1.5h-9a.75.75 0 0 1-.75-.75Zm0 3a.75.75 0 0 1 .75-.75H12a.75.75 0 0 1 0 1.5H7.5a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"/>
@@ -90,6 +90,30 @@
     </footer>
   </div>
 
+  <dialog class="resume-dialog" id="resume-dialog" aria-labelledby="resume-dialog-title">
+    <div class="resume-dialog__panel">
+      <header class="resume-dialog__toolbar">
+        <h2 id="resume-dialog-title">Résumé</h2>
+        <div class="resume-dialog__actions">
+          <a class="resume-dialog__download" href="resume.pdf?v=20260919-1" download="Christopher Brown - Resume.pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>
+            Download PDF
+          </a>
+          <button class="resume-dialog__close" type="button" data-resume-close aria-label="Close résumé" autofocus>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+      </header>
+      <div class="resume-dialog__body">
+        <div class="resume-dialog__status" data-resume-status>
+          <p role="status" data-resume-message>Loading résumé…</p>
+          <a href="resume.html" target="_blank" rel="noopener">Open résumé in a new tab</a>
+        </div>
+        <iframe class="resume-dialog__frame" data-resume-frame title="Christopher Brown’s résumé" hidden></iframe>
+      </div>
+    </div>
+  </dialog>
+
   <script id="landing-illustrations" type="text/plain">
     {% for image in site.static_files %}
       {% if image.path contains '/images/landing/' %}
@@ -100,7 +124,7 @@
       {% endif %}
     {% endfor %}
   </script>
-  <script src="script.js?v=20260905-1"></script>
+  <script src="script.js?v=20260919-1"></script>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="f23c6799-7f11-49ec-a08a-813addb11840"></script>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "74e8161938454a92b4fa0f261c9faa02"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
