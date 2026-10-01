@@ -219,7 +219,7 @@
       resumeDialog.showModal();
       document.body.style.setProperty("--resume-scroll-offset", `${-savedScrollY}px`);
       document.body.classList.add("has-resume-open");
-      if (!frame.hasAttribute("src")) frame.src = "resume.html?embedded=1&v=20261001-1";
+      if (!frame.hasAttribute("src")) frame.src = "resume.html?embedded=1&v=20261001-2";
       syncAnimationState();
     });
 
