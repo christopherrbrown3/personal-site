@@ -32,9 +32,12 @@ revision `63c1734f2d0b808a16c2208b54f38df7cdfccab2` (September 2026 edition).
 Both files now include GitHub Foundations, earned October 1, 2026, alongside
 the other selected credentials in plain text. Every credential displays its
 issue month and year; AWS dates come from the issued badges on Credly.
-The expired Solutions Architect credential has been removed. The PDF keeps
-the supplied two-page layout. The HTML retains embedding support, local
-download links, and the same email obfuscation used on the homepage.
-Update both files together when the
-resume changes, sync `site-v2/public/resume.pdf`, and bump their cache versions
+The selected credentials include AWS Incident Response Demonstrated, issued
+April 2026. The AWS experience section includes AWSome Awards All-Star
+recognition from March 2026. The expired Solutions Architect credential has
+been removed. The PDF keeps the supplied two-page layout. The HTML retains
+embedding support, local download links, and the same email obfuscation used
+on the homepage.
+Update both files together when the resume changes, sync
+`site-v2/public/resume.pdf`, and bump their cache versions
 in `index.html`, `script.js`, and `resume.html`.
