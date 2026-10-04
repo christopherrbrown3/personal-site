@@ -19,6 +19,12 @@ Each image is contained within the same responsive stage. On load, the page
 automatically contains its intrinsic dimensions, so new artwork does not need a
 special CSS rule or filename.
 
+## Blog link
+
+The open-book link visits `https://blog.christopherbrown.io/` in the same tab.
+Its burnt-orange icon uses the same hover lift as the other links. Navigation
+uses a normal link with no page transition or delay.
+
 ## Résumé
 
 The Résumé link opens `resume.html` in a native dialog with a persistent PDF
@@ -37,8 +43,7 @@ The selected credentials include AWS Incident Response Demonstrated, issued
 April 2026. The AWS experience section includes AWSome Awards All-Star
 recognition from March 2026. The expired Solutions Architect credential has
 been removed. The PDF keeps the supplied two-page layout. The HTML retains
-embedding support, local download links, and the same email obfuscation used
-on the homepage.
+embedding support, local download links, and click-to-reveal email obfuscation.
 Update both files together when the resume changes, sync
 `site-v2/public/resume.pdf`, and bump their cache versions
 in `index.html`, `script.js`, and `resume.html`.

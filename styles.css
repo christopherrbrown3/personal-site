@@ -5,7 +5,7 @@
   --ink-soft: #657078;
   --teal: #247a76;
   --orange: #d96c3c;
-  --email-icon: #bd633f;
+  --blog-icon: #bd633f;
   --resume-icon: #247a76;
   --mustard: #e5ae3f;
   --accent: var(--teal);
@@ -366,8 +366,12 @@ body {
   display: block;
 }
 
-.social-link--email .social-link__utility-icon {
-  color: var(--email-icon);
+.social-link--blog .social-link__utility-icon {
+  color: var(--blog-icon);
+}
+
+.blog-icon__lines {
+  stroke: var(--paper);
 }
 
 .social-link--resume .social-link__utility-icon {
