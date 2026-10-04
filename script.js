@@ -46,7 +46,6 @@
   const stage = document.querySelector(".portrait-stage");
   const image = document.querySelector("[data-random-portrait]");
   const year = document.querySelector("[data-year]");
-  const emailLink = document.querySelector("[data-email-link]");
   const resumeLink = document.querySelector("[data-resume-open]");
   const resumeDialog = document.querySelector("#resume-dialog");
   const accentNames = ["teal", "orange", "mustard"];
@@ -70,18 +69,6 @@
   if (year) {
     year.textContent = new Date().getFullYear();
   }
-
-  emailLink?.addEventListener("click", (event) => {
-    const encodedAddress = emailLink.dataset.emailCode ?? "";
-    try {
-      const address = window.atob(encodedAddress);
-      if (!address) return;
-      event.preventDefault();
-      window.location.href = `mailto:${address}`;
-    } catch {
-      // Leave the harmless #email fallback in place if decoding is unavailable.
-    }
-  });
 
   const randomIndex = (length) => {
     if (length <= 1) return 0;
