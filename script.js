@@ -26,6 +26,9 @@
     "/images/landing/chris-18.png",
     "/images/landing/chris-19.png",
     "/images/landing/chris-20.png",
+    "/images/landing/chris-21.png",
+    "/images/landing/chris-22.png",
+    "/images/landing/chris-23.png",
   ];
   const catalog = document.querySelector("#landing-illustrations")?.textContent ?? "";
   const discoveredPortraits = catalog
