@@ -29,6 +29,10 @@
     "/images/landing/chris-21.png",
     "/images/landing/chris-22.png",
     "/images/landing/chris-23.png",
+    "/images/landing/chris-24-fountain-pen.png",
+    "/images/landing/chris-25-reading.png",
+    "/images/landing/chris-26-iced-coffee.png",
+    "/images/landing/chris-27-roanoke-star.png",
   ];
   const catalog = document.querySelector("#landing-illustrations")?.textContent ?? "";
   const discoveredPortraits = catalog
