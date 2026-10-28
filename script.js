@@ -33,6 +33,8 @@
     "/images/landing/chris-25-reading.png",
     "/images/landing/chris-26-iced-coffee.png",
     "/images/landing/chris-27-roanoke-star.png",
+    "/images/landing/chris-28-world-clock.png",
+    "/images/landing/chris-29-print-measuring.png",
   ];
   const catalog = document.querySelector("#landing-illustrations")?.textContent ?? "";
   const discoveredPortraits = catalog
