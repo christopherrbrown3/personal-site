@@ -35,6 +35,10 @@
     "/images/landing/chris-27-roanoke-star.png",
     "/images/landing/chris-28-world-clock.png",
     "/images/landing/chris-29-print-measuring.png",
+    "/images/landing/chris-30-library-ladder.png",
+    "/images/landing/chris-31-model-rocket.png",
+    "/images/landing/chris-32-lego-star-wars.png",
+    "/images/landing/chris-33-desktop-coding.png",
   ];
   const catalog = document.querySelector("#landing-illustrations")?.textContent ?? "";
   const discoveredPortraits = catalog
