@@ -31,19 +31,3 @@ The Résumé link opens `resume.html` in a native dialog with a persistent PDF
 download button. It also works as a standalone page when opened directly or
 when JavaScript is unavailable. Escape, the close button, and a click outside
 the dialog return to the homepage; reduced-motion preferences are respected.
-
-`resume.html` and `resume.pdf` were imported together from
-`christopherrbrown3/resume-customizer`, folder `customized-resumes/Personal Website`,
-revision `63c1734f2d0b808a16c2208b54f38df7cdfccab2` (September 2026 edition).
-Both files now include GitHub Copilot, earned October 2, 2026, and GitHub
-Foundations, earned October 1, 2026, alongside the other selected credentials
-in plain text. Every credential displays its issue month and year; AWS dates
-come from the issued badges on Credly.
-The selected credentials include AWS Incident Response Demonstrated, issued
-April 2026. The AWS experience section includes AWSome Awards All-Star
-recognition from March 2026. The expired Solutions Architect credential has
-been removed. The PDF keeps the supplied two-page layout. The HTML retains
-embedding support, local download links, and click-to-reveal email obfuscation.
-Update both files together when the resume changes, sync
-`site-v2/public/resume.pdf`, and bump their cache versions
-in `index.html`, `script.js`, and `resume.html`.
