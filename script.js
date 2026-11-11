@@ -39,6 +39,7 @@
     "/images/landing/chris-31-model-rocket.png",
     "/images/landing/chris-32-lego-star-wars.png",
     "/images/landing/chris-33-desktop-coding.png",
+    "/images/landing/chris-34-dumbbell-curl.png",
   ];
   const catalog = document.querySelector("#landing-illustrations")?.textContent ?? "";
   const discoveredPortraits = catalog
